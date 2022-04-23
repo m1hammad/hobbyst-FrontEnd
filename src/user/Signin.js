@@ -5,15 +5,15 @@ export default class Signin extends Component {
 
     state = {}
 
-    changeHandler = (e) => {
-        let temp = {...this.state}
-        temp[e.target.name] = e.target.value
-        this.setState(temp)
-    }
+  changeHandler = (e) => {
+    let temp = {...this.state}
+    temp[e.target.name] = e.target.value
+    this.setState(temp)
+  }
 
-        loginHandler = () => {
-        this.props.login(this.state)
-    }
+  loginHandler = () => {
+    this.props.login(this.state)
+  }
 
   render() {
     console.log(this.state)

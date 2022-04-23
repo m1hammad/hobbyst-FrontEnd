@@ -36,13 +36,29 @@ export default class App extends Component {
     }
   }
 
+
   registerHandler = (user) => {
-    console.log(user)
     Axios.post("auth/signup", user)
     .then(response =>{
-      console.log(response)
+      console.log('Signup response',response.data.token)
+      
+      if(response.data.token !== null){
+        localStorage.setItem("token", response.data.token)
+        let user = jwt_decode(response.data.token)
+
+        this.setState({
+          isAuth: true,
+          user: user,
+          message: "User logged in successfully"
+        })
+      }
     })
-    .catch(error => console.log(error))
+    .catch(error => {
+      console.log(error)
+      this.setState({
+        isAuth: false,
+      })
+    })
 
   }
 
