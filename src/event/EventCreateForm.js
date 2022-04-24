@@ -1,5 +1,5 @@
 import React, { Component } from 'react' 
-// import Hobby from "../models/Hobby"
+//import Hobby from "../models/Hobby"
 
 export default class EventCreateForm extends Component {
 
@@ -53,58 +53,59 @@ export default class EventCreateForm extends Component {
     // {this.loadHobbyList()}
     // </tr>
     // )
-      console.log(this.state.newEvent)
-    return (
-      <div>
-          <h1>Create Event</h1>
-          <form onSubmit={this.handleSubmit}>
-            <div>
-                <label>Name</label>
-                <input name='name' type='text' onChange={this.handleChange}></input>
-            </div>
+  console.log(this.state.newEvent)
+  return (
+    <div>
+      <h1>Sign up</h1>
+      <Container>
+          <Form.Group>
+              <Form.Label>First Name</Form.Label>
+              <Form.Control name="firstName" onChange={changeHandler}></Form.Control>
+          </Form.Group>
 
-            <div>
-                <label>Upload Photo</label>
-                <input name='photo' type='text' onChange={this.handleChange}></input>
-            </div> 
+          <Form.Group>
+              <Form.Label>Last Name</Form.Label>
+              <Form.Control name="lastName" onChange={changeHandler}></Form.Control>
+          </Form.Group>
 
-            <div>
-                <label>Description</label>
-                <input name='description' type='text' onChange={this.handleChange}></input>
-            </div>
+          <Form.Group>
+              <Form.Label>Email Address</Form.Label>
+              <Form.Control name="emailAddress" onChange={changeHandler}></Form.Control>
+          </Form.Group>
 
-            <div>
-                <label>General Location</label>
-                <input name='generalLocation' type='text' onChange={this.handleChange}></input>
-            </div> 
+          <Form.Group>
+              <Form.Label>Password</Form.Label>
+              <Form.Control name="password" type='password' onChange={changeHandler}></Form.Control>
+          </Form.Group>
 
-            <div>
-                <label>Precise Location</label>
-                <input name='preciseLocation' type='text' onChange={this.handleChange}></input>
-            </div> 
+          <Form.Group>
+              <Form.Label>City</Form.Label>
+              <Form.Control name="city" onChange={changeHandler}></Form.Control>
+          </Form.Group>
 
-            <div>
-                <label>Date and Time</label>
-                <input name='dateAndTimes' type='datetime-local' onChange={this.handleChange}></input>
-            </div> 
+          <Form.Group>
+              <Form.Label>Province</Form.Label>
+              <Form.Control name="province" onChange={changeHandler}></Form.Control>
+          </Form.Group>
+              
+              
+          <Form.Group>
+              <Form.Label>Hobbies:</Form.Label> 
+              {/* <select class="select" multiple> */}
+              <Form.Select options={aquaticCreatures} className="select" name="hobby[]" onChange={changeHandler} multiple="" data-live-search="true">
+                  {hobby.map((hobby, index) => (
+                      <Form.Control key={index} >{hobby.name}</Form.Control>
+                  ))} 
+                  {/* </select> */}
+              </Form.Select>
 
-            <div>
-                <label>Max Participants</label>
-                <input name='maxParticipants' type='number' onChange={this.handleChange}></input>
-            </div> 
+          </Form.Group>
+          
 
-            <div>
-                <label>Hobby Tags</label>
-                <input name='hobbyTags' type='number' onChange={this.handleChange}></input>
-            </div> 
+          <Button variant='primary' onClick={registerHandler}>Register</Button>
 
-
-            <div>
-                <input type="submit" value="CREATE"></input>
-            </div>
-
-          </form>
-      </div>
-    )
-  }
+      </Container>
+    </div>
+  )
+} 
 }
