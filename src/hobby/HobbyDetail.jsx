@@ -4,7 +4,7 @@ import React from 'react'
 export default function Hobby(props) {
   return (
       <>
-          <td>{props.name}</td>
+          <td>{props.name} hello </td>
 
       </>
   )
