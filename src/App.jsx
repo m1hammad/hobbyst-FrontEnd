@@ -2,10 +2,13 @@ import React, { Component } from 'react'
 import AuthorList from './author/AuthorList'
 import Signup from './user/Signup'
 import Signin from './user/Signin'
+import HomeLoggedIn from './landingPage/HomeLoggedIn'
+import HomeLoggedOut from './landingPage/HomeLoggedOut'
 import {BrowserRouter as Router, Route, Routes, Link} from "react-router-dom"
 import Axios from "axios"
 import jwt_decode from "jwt-decode"
-import { Alert } from "react-bootstrap"
+import { Alert, Nav } from "react-bootstrap" 
+import HobbyList from './hobby/HobbyList'
 
 
 export default class App extends Component {
@@ -14,10 +17,22 @@ export default class App extends Component {
     isAuth: false,
     user: null,
     message: null,
+    hobbies: [], 
   }
 
   componentDidMount(){
     let token = localStorage.getItem("token")
+
+    Axios.get('/hobbyindex')
+    .then(response => {
+      console.log(response.data.hobbiesList)
+      // console.log("myhobbies",hobbies)
+      this.setState({
+        hobbies: response.data.hobbiesList.slice()
+      })
+
+    })
+    .catch(error => console.log(error))
 
     if(token !== null){
       let user = jwt_decode(token)
@@ -35,6 +50,8 @@ export default class App extends Component {
       }
     }
   }
+
+  
 
 
   registerHandler = (user) => {
@@ -99,6 +116,7 @@ export default class App extends Component {
   }
 
   render() {
+    console.log("Main app",this.state.hobbies)
     const message = this.state.message ? (
       <Alert variant='danger'>{this.state.message}</Alert>
     ) : null
@@ -106,29 +124,50 @@ export default class App extends Component {
     console.log("the user is", this.state.user)
     return (
       <div>
-      {message}
-        <Router>
-          <nav>
-          {isAuth ? (
-            <div>
-              {this.state.user ? "welcome "+this.state.user.user.name : null} {" "}
-              <Link to='/'>Home</Link> &nbsp;
-            <Link to='/logout' onClick={this.logoutHandler}>Logout</Link> &nbsp;
-            </div>
-          ) : (
-            <div>
-            <Link to='/'>Home</Link> &nbsp;
-            <Link to='/signup'>Signup</Link> &nbsp;
-            <Link to='/signin'>Signin</Link> &nbsp;
-            </div>
-          )
-          }
-          </nav>
+      {/* {message} */}
+            { isAuth ? (
+              <Nav  as="ul" className="justify-content-center nav">
+              
+              <Nav.Item as="li">
+                <Nav.Link href="/" className='text-white'>Home</Nav.Link>
+              </Nav.Item>
+              <Nav.Item as="li">
+                <Nav.Link className='text-white'>{this.state.user ? this.state.user.user.name : null}</Nav.Link>
+              </Nav.Item>
+              <Nav.Item as="li">
+                <Nav.Link href="/logout" onClick={this.logoutHandler} className='text-white'>Logout</Nav.Link>
+              </Nav.Item>
+              <Nav.Item as="li">
+              <Nav.Link href="/hobbylist" className='text-white'>Hobbies</Nav.Link>
+            </Nav.Item>
+              
+              </Nav>
+            ):
+            (
+              <Nav  as="ul" className="justify-content-center nav">
+              <Nav.Item as="li">
+                <Nav.Link href="/" className='text-white'>Home</Nav.Link>
+              </Nav.Item>
+              <Nav.Item as="li">
+                <Nav.Link href="/signin" className='text-white'>Signin</Nav.Link>
+              </Nav.Item>
+              <Nav.Item as="li">
+                <Nav.Link href="/signup" className='text-white'>Signup</Nav.Link>
+              </Nav.Item>
+              </Nav>
+            )}
+          
+
+          <Router>
           <div>
             <Routes>
-              <Route path='/' element={ isAuth ? <AuthorList /> : <Signin login={this.loginHandler} />}></Route>
+              <Route path='/' element={ isAuth ? <HomeLoggedIn /> : <HomeLoggedOut />}></Route>
               <Route path='/signup' element={<Signup register={this.registerHandler} />}></Route>
               <Route path='/signin' element={<Signin login={this.loginHandler} />}></Route>
+              <Route path='/hobbylist' element={<HobbyList hobbies={this.state.hobbies} />}> </Route>
+              
+              
+
             </Routes>
           </div>
         </Router>
