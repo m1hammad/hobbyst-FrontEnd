@@ -7,7 +7,7 @@ import HomeLoggedOut from './landingPage/HomeLoggedOut'
 import {BrowserRouter as Router, Route, Routes, Link} from "react-router-dom"
 import Axios from "axios"
 import jwt_decode from "jwt-decode"
-import { Alert, Nav } from "react-bootstrap" 
+import { Alert, Nav, NavItem } from "react-bootstrap" 
 import HobbyList from './hobby/HobbyList'
 
 
@@ -140,6 +140,9 @@ export default class App extends Component {
               <Nav.Item as="li">
               <Nav.Link href="/hobbylist" className='text-white'>Hobbies</Nav.Link>
             </Nav.Item>
+            <Nav.Item>
+            <Nav.Link href="/eventcreateform" className='text-white'>New Event</Nav.Link>
+            </Nav.Item>
               
               </Nav>
             ):
@@ -165,6 +168,9 @@ export default class App extends Component {
               <Route path='/signup' element={<Signup register={this.registerHandler} hobbies={this.state.hobbies} />}></Route>
               <Route path='/signin' element={<Signin login={this.loginHandler} />}></Route>
               <Route path='/hobbylist' element={<HobbyList hobbies={this.state.hobbies} />}> </Route>
+
+              <Route path='/eventcreateform' element={<HobbyList hobbies={this.state.hobbies} />}> </Route>
+              
 
               
 

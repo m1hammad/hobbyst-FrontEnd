@@ -29,6 +29,7 @@ background: linear-gradient(10deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(
   height: 100%;
   opacity: 0.7;
   background:url('../public/bg.jpeg');
+
   background-repeat: no-repeat;
   background-position: 100% 0;
   background-size: cover;

@@ -1,4 +1,4 @@
-import EventCreateForm from './EventCreateForm'
+import EventCreateForm from '../event/EventCreateForm'
 import React from 'react'
 
 export default function Hobby(props) {
