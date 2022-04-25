@@ -13,13 +13,15 @@ import EventCreateForm from './event/EventCreateForm'
 import HobbyDetail from './hobby/HobbyDetail'
 
 
+
 export default class App extends Component {
   
   state = {
     isAuth: false,
-    user: null,
+    user: [],
     message: null,
     hobbies: [], 
+    event:[]
   }
 
   componentDidMount(){
@@ -126,6 +128,18 @@ export default class App extends Component {
       message: "User logged out successfully"
     })
   }
+  
+  createEventHandler = (e)=>{
+    Axios.post('/eventcreateform', e)
+    .then(response=>{
+      console.log(response)
+      this.setState({event:response.data})
+
+    })
+  .catch(error =>{
+    console.log(error)
+  })
+}
 
   render() {
     console.log("Main app",this.state.hobbies)
@@ -179,12 +193,16 @@ export default class App extends Component {
               <Route path='/' element={ isAuth ? <HomeLoggedIn /> : <HomeLoggedOut />}></Route>
               <Route path='/signup' element={<Signup register={this.registerHandler} hobbies={this.state.hobbies} />}></Route>
               <Route path='/signin' element={<Signin login={this.loginHandler} />}></Route>
+
               <Route path='/hobbylist' element={<HobbyList hobbies={this.state.hobbies} />}> </Route> 
 
               <Route path='/hobbydetail/:id' element={<HobbyDetail/>}> </Route>
 
               {/* {this.state.hobbies.map(hobby => <Route path="/hobby/:_id" element={<HobbyDetail />} /> ) }  */}
-              <Route path="/hobby/:id" element={<HobbyDetail />} /> 
+             
+              <Route path='/eventcreateform' element={<EventCreateForm user={this.state.user.user} eventy={this.createEventHandler} />}></Route>
+  
+
 
               {/* <Route path='/eventcreateform' element={<HobbyList hobbies={this.state.hobbies} />}> </Route>   */}
               <Route path='/eventcreateform' element={<EventCreateForm hobbies={this.state.hobbies} />}> </Route> 
