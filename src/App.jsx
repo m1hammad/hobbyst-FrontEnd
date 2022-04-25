@@ -7,8 +7,10 @@ import HomeLoggedOut from './landingPage/HomeLoggedOut'
 import {BrowserRouter as Router, Route, Routes, Link} from "react-router-dom"
 import Axios from "axios"
 import jwt_decode from "jwt-decode"
-import { Alert, Nav } from "react-bootstrap" 
+import { Alert, Nav, NavItem } from "react-bootstrap" 
 import HobbyList from './hobby/HobbyList'
+import EventCreateForm from './event/EventCreateForm' 
+import HobbyDetail from './hobby/HobbyDetail'
 
 
 export default class App extends Component {
@@ -51,7 +53,17 @@ export default class App extends Component {
     }
   }
 
-  
+  // showHobbyDetail = (id) => { 
+  //   Axios.get('/hobbydetail') 
+  //   .then(response => {
+  //     console.log(response.data.hobbyDetail)
+  //     // console.log("myhobbies",hobbies)
+  //     this.setState({
+  //       hobbies: response.data.hobbyDetail.slice()
+  //     })
+  //   }
+  //   )}
+  // }
 
 
   registerHandler = (user) => {
@@ -140,6 +152,9 @@ export default class App extends Component {
               <Nav.Item as="li">
               <Nav.Link href="/hobbylist" className='text-white'>Hobbies</Nav.Link>
             </Nav.Item>
+            <Nav.Item>
+            <Nav.Link href="/eventcreateform" className='text-white'>New Event</Nav.Link>
+            </Nav.Item>
               
               </Nav>
             ):
@@ -162,12 +177,20 @@ export default class App extends Component {
           <div>
             <Routes>
               <Route path='/' element={ isAuth ? <HomeLoggedIn /> : <HomeLoggedOut />}></Route>
-              <Route path='/signup' element={<Signup register={this.registerHandler} />}></Route>
+              <Route path='/signup' element={<Signup register={this.registerHandler} hobbies={this.state.hobbies} />}></Route>
               <Route path='/signin' element={<Signin login={this.loginHandler} />}></Route>
-              <Route path='/hobbylist' element={<HobbyList hobbies={this.state.hobbies} />}> </Route>
-              
+              <Route path='/hobbylist' element={<HobbyList hobbies={this.state.hobbies} />}> </Route> 
+
+              <Route path='/hobbydetail/:id' element={<HobbyDetail/>}> </Route>
+
+              {/* {this.state.hobbies.map(hobby => <Route path="/hobby/:_id" element={<HobbyDetail />} /> ) }  */}
+              <Route path="/hobby/:id" element={<HobbyDetail />} /> 
+
+              {/* <Route path='/eventcreateform' element={<HobbyList hobbies={this.state.hobbies} />}> </Route>   */}
+              <Route path='/eventcreateform' element={<EventCreateForm hobbies={this.state.hobbies} />}> </Route> 
               
 
+            
             </Routes>
           </div>
         </Router>

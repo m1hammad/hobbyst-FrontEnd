@@ -4,19 +4,18 @@ import HobbyItem from "./HobbyItem";
 
 export default function HobbyList(props) {
 
-  let allHobbies;
+  
   console.log("Inside HobbyList",props.hobbies)
 
   return (   
-    allHobbies = props.hobbies.map((hobby, index) => ( 
-          <div> 
-        <HobbyItem hobby={hobby} key={index}> </HobbyItem> 
-        {allHobbies}
-          </div> 
+    <>
+    <h1 className='title'>HOBBIES</h1>
+{props.hobbies.map((hobby, index) => ( <div className="hobbyList"> <HobbyItem hobby={hobby} key={index} /> </div>))}
+    </> 
       )
-    )
-    )
-}
+    } 
+
+  
 
 
 
