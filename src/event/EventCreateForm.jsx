@@ -1,16 +1,17 @@
 import React, { Component } from 'react' 
+import { FormGroup } from 'react-bootstrap'
 //import Hobby from "../models/Hobby"
 
-export default class EventCreateForm extends Component {
+export default function EventCreateForm(props){
 
-    constructor(props) {
-      super(props)
+    // constructor(props) {
+    //   super(props)
     
-      this.state = {
-         newEvent: props.event ,
-        //  hobbies: props.hobby
-      }
-    } 
+    //   this.state = {
+    //      newEvent: props.event ,
+    //     //  hobbies: props.hobby
+    //   }
+    // } 
 
  
 //  componentDidMount(){
@@ -45,8 +46,6 @@ export default class EventCreateForm extends Component {
 //         event.preventDefault()
 //         this.props.addEvent(this.state.newEvent)
 //     }
-
-  render() { 
     // const allHobbies = this.state.hobbies.map((hobby, index) => 
     // <tr key={index}>
     // <Hobby {...eventt} ></Hobby>
@@ -56,36 +55,38 @@ export default class EventCreateForm extends Component {
   console.log(this.state.newEvent)
   return (
     <div>
-      <h1>Sign up</h1>
+      <h1>Create Event</h1>
       <Container>
           <Form.Group>
-              <Form.Label>First Name</Form.Label>
-              <Form.Control name="firstName" onChange={changeHandler}></Form.Control>
+              <Form.Label>Title</Form.Label>
+              <Form.Control name="title" ></Form.Control>
+          </Form.Group>
+          <Form.Group>
+              <Form.Label>Photo</Form.Label>
+              <Form.Control name="title" onChange={changeHandler}></Form.Control>
+          </Form.Group>
+          <Form.Group>
+              <Form.Label>Description</Form.Label>
+              <Form.Control name="description" onChange={changeHandler}></Form.Control>
+          </Form.Group>
+          <Form.Group>
+              <Form.Label>Date and Time</Form.Label>
+              <Form.Control name="dateAndTime" onChange={changeHandler}></Form.Control>
           </Form.Group>
 
           <Form.Group>
-              <Form.Label>Last Name</Form.Label>
-              <Form.Control name="lastName" onChange={changeHandler}></Form.Control>
+              <Form.Label>Maximum Participants</Form.Label>
+              <Form.Control name="maxParticipants" onChange={changeHandler}></Form.Control>
           </Form.Group>
-
+          
           <Form.Group>
-              <Form.Label>Email Address</Form.Label>
-              <Form.Control name="emailAddress" onChange={changeHandler}></Form.Control>
+              <Form.Label>General Location</Form.Label>
+              <Form.Control name="generalLocation" onChange={changeHandler}></Form.Control>
           </Form.Group>
-
+          
           <Form.Group>
-              <Form.Label>Password</Form.Label>
-              <Form.Control name="password" type='password' onChange={changeHandler}></Form.Control>
-          </Form.Group>
-
-          <Form.Group>
-              <Form.Label>City</Form.Label>
-              <Form.Control name="city" onChange={changeHandler}></Form.Control>
-          </Form.Group>
-
-          <Form.Group>
-              <Form.Label>Province</Form.Label>
-              <Form.Control name="province" onChange={changeHandler}></Form.Control>
+              <Form.Label>Precice Location</Form.Label>
+              <Form.Control name="preciseLocation" onChange={changeHandler}></Form.Control>
           </Form.Group>
               
               
@@ -98,14 +99,13 @@ export default class EventCreateForm extends Component {
                   ))} 
                   {/* </select> */}
               </Form.Select>
-
           </Form.Group>
           
 
-          <Button variant='primary' onClick={registerHandler}>Register</Button>
+          <Button variant='primary' onClick={registerHandler}>Create</Button>
 
       </Container>
     </div>
   )
 } 
-}
+
