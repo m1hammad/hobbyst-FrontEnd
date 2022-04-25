@@ -9,15 +9,17 @@ import Axios from "axios"
 import jwt_decode from "jwt-decode"
 import { Alert, Nav, NavItem } from "react-bootstrap" 
 import HobbyList from './hobby/HobbyList'
+import EventCreateForm from './event/EventCreateForm'
 
 
 export default class App extends Component {
   
   state = {
     isAuth: false,
-    user: null,
+    user: [],
     message: null,
     hobbies: [], 
+    event:[]
   }
 
   componentDidMount(){
@@ -114,6 +116,18 @@ export default class App extends Component {
       message: "User logged out successfully"
     })
   }
+  
+  createEventHandler = (e)=>{
+    Axios.post('/eventcreateform', e)
+    .then(response=>{
+      console.log(response)
+      this.setState({event:response.data})
+
+    })
+  .catch(error =>{
+    console.log(error)
+  })
+}
 
   render() {
     console.log("Main app",this.state.hobbies)
@@ -168,9 +182,8 @@ export default class App extends Component {
               <Route path='/signup' element={<Signup register={this.registerHandler} hobbies={this.state.hobbies} />}></Route>
               <Route path='/signin' element={<Signin login={this.loginHandler} />}></Route>
               <Route path='/hobbylist' element={<HobbyList hobbies={this.state.hobbies} />}> </Route>
-
-              <Route path='/eventcreateform' element={<HobbyList hobbies={this.state.hobbies} />}> </Route>
-              
+              <Route path='/eventcreateform' element={<EventCreateForm user={this.state.user.user} eventy={this.createEventHandler} />}></Route>
+              {console.log(this.state.user.user)}
 
               
 
