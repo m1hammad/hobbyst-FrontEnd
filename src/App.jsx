@@ -162,10 +162,10 @@ export default class App extends Component {
           <div>
             <Routes>
               <Route path='/' element={ isAuth ? <HomeLoggedIn /> : <HomeLoggedOut />}></Route>
-              <Route path='/signup' element={<Signup register={this.registerHandler} />}></Route>
+              <Route path='/signup' element={<Signup register={this.registerHandler} hobbies={this.state.hobbies} />}></Route>
               <Route path='/signin' element={<Signin login={this.loginHandler} />}></Route>
               <Route path='/hobbylist' element={<HobbyList hobbies={this.state.hobbies} />}> </Route>
-              
+
               
 
             </Routes>

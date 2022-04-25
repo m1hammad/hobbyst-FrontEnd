@@ -4,18 +4,28 @@ import { useNavigate } from "react-router";
 import Select from 'react-select'
 // import {Multiselect} from 'multiselect-react-dropdown'
 import Axios from 'axios' 
+import NavbarCollapse from 'react-bootstrap/esm/NavbarCollapse';
 
 export default function Signup(props) {
 
     const [user, setUser] = useState(null);
-    const [hobby, setHobby] = useState([]);
+    const [hobbyState, setHobby] = useState([])
 
     const navigate = useNavigate();
 
     const changeHandler = (e) => {
         let temp = {...user}
         temp[e.target.name] = e.target.value
+        temp.hobby = hobbyState
+        console.log("this is temp", temp)
         setUser(temp)
+    }
+   
+    const selectHobby = (e) => {
+        let hobi = hobbyState
+        hobi.push(e.target.value)
+        console.log(hobi)
+        setHobby(hobi)
     }
 
     const registerHandler = () => {
@@ -23,30 +33,14 @@ export default function Signup(props) {
         navigate('/')
     }
 
-    const aquaticCreatures = [
-        { label: 'Shark', value: 'Shark'},
-        { label: 'Dolphin', value: 'Dolphin' },
-        { label: 'Whale', value: 'Whale' },
-        { label: 'Octopus', value: 'Octopus' },
-        { label: 'Crab', value: 'Crab' },
-        { label: 'Lobster', value: 'Lobster' },
-      ];
-      
-   
-
-    useEffect(() => {
-            Axios.get('/hobbyindex')
-            .then(response => {
-                const hobbies = response.data.hobbiesList
-                // console.log("myhobbies",hobbies)
-
-                setHobby(hobbies)
-
-            })
-            .catch(error => console.log(error))
-    }, [])
     console.log("This is my response",user)
-    console.log("my hobbies outside",hobby)
+    console.log("my hobbies outside",props.hobbies)
+
+    const hobbyArr = props.hobbies.map((hobby, index) => (
+        <Button name='hobby' type='button'  key={index} onClick={selectHobby} value={hobby._id} multiple >{hobby.name}</Button> 
+        )
+        )
+    console.log('yo', hobbyArr)
 
     return (
       <div>
@@ -84,14 +78,13 @@ export default function Signup(props) {
                 
                 
             <Form.Group>
-                <Form.Label>Hobbies:</Form.Label> 
+                <Form.Label>Hobbies:</Form.Label> <br/>
                 {/* <select class="select" multiple> */}
-                <Form.Select options={aquaticCreatures} className="select" name="hobby[]" onChange={changeHandler} multiple="" data-live-search="true">
-                    {hobby.map((hobby, index) => (
-                        <Form.Control key={index} >{hobby.name}</Form.Control>
-                    ))} 
+                {/* <Form.Select options={aquaticCreatures} className="select" name="hobby[]" onChange={changeHandler} multiple="" data-live-search="true"> */}
+                    {hobbyArr}
+                    {/* <Button type='button' name='hobby[]' onClick={changeHandler} value="hi" >Hi</Button> */}
                     {/* </select> */}
-                </Form.Select>
+                {/* </Form.Select> */}
 
             </Form.Group>
            
