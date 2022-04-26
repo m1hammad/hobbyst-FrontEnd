@@ -201,12 +201,8 @@ export default class App extends Component {
 
               {/* {this.state.hobbies.map(hobby => <Route path="/hobby/:_id" element={<HobbyDetail />} /> ) }  */}
              
-              <Route path='/eventcreateform' element={<EventCreateForm user={this.state.user.user} eventy={this.createEventHandler} />}></Route>
+              <Route path='/eventcreateform' element={<EventCreateForm hobbies={this.state.hobbies} user={this.state.user.user} eventy={this.createEventHandler} />}></Route>
   
-
-
-              {/* <Route path='/eventcreateform' element={<HobbyList hobbies={this.state.hobbies} />}> </Route>   */}
-              <Route path='/eventcreateform' element={<EventCreateForm hobbies={this.state.hobbies} />}> </Route> 
               
 
             
