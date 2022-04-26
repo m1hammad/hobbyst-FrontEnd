@@ -50,7 +50,7 @@ export default function EventCreateForm(props){
     <>
   
     <div>
-      <h1>Create Event</h1>
+      <h1 className='title'>Create Event</h1>
       <Container>
           <Form.Group>
               <Form.Label>Title</Form.Label>

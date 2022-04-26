@@ -196,7 +196,7 @@ export default class App extends Component {
 
               <Route path='/hobbylist' element={<HobbyList hobbies={this.state.hobbies} />}> </Route> 
 
-              <Route path='/hobbydetail/:id' element={<HobbyDetail/>}> </Route>
+              <Route path='/hobbydetail/:id' element={<HobbyDetail/>}> </Route> 
 
               {/* {this.state.hobbies.map(hobby => <Route path="/hobby/:_id" element={<HobbyDetail />} /> ) }  */}
              

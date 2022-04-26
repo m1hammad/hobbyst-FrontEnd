@@ -1,6 +1,6 @@
 import React, {useState} from 'react' 
 import EventCreateForm from '../event/EventCreateForm'
-import EventList from "../event/EventList" 
+// import EventList from "../event/EventList" 
 import {useParams} from "react-router-dom" 
 import Axios from "axios"
 
@@ -16,21 +16,25 @@ export default function Hobby() {
     setHobby(response.data.hobby)
   }) 
   .catch(error => console.log(error)) 
-  console.log({hobby}) 
+  console.log() 
 
- //check function if{hobby} , then :
 
-  return (
-      <div>
-        <div className='hobbyTitle'> 
-          <h1>{hobby}</h1>  
-          {/* <img src={hobby.photo}></img>  */}
+    return (
+      <> 
+      {hobby&& 
+        <div>
+          <div className='hobbyTitle'> 
+            <h1 className='title'>{hobby.name}</h1>  
+            <img src={hobby.photo}></img> 
+          </div>
+            <h1 className='title'>Events</h1> 
+            <p> map over all tagged to this particular hobby and display them as an index</p>   
+            {/* <EventList></EventList> */}
+            <EventCreateForm></EventCreateForm>
         </div>
-          <h1>Events</h1> 
-          <p> map over all tagged to this particular hobby and display them as an index</p>   
-          {/* <EventList></EventList> */}
-          <h2>Create New Event</h2>
-          {/* <EventCreateForm></EventCreateForm> */}
-      </div>
-  )
-}
+      }
+      </>
+    )
+  }
+
+

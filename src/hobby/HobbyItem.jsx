@@ -3,6 +3,7 @@ import React from 'react';
 
 export default function HobbyItem(props) {  
 
+
   let link = `hobbydetail/${props.hobby._id}`
 
     return ( 
