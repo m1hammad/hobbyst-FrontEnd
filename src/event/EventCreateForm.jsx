@@ -87,9 +87,6 @@ export default function EventCreateForm(props){
 
       </Container>
       </div>
-    
-
-    
    </>
   )
 } 

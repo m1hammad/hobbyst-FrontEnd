@@ -10,7 +10,7 @@ import jwt_decode from "jwt-decode"
 import { Alert, Nav, NavItem } from "react-bootstrap" 
 import HobbyList from './hobby/HobbyList'
 import EventCreateForm from './event/EventCreateForm'
-
+import Profile from './user/Profile'
 
 export default class App extends Component {
   
@@ -27,7 +27,7 @@ export default class App extends Component {
 
     Axios.get('/hobbyindex')
     .then(response => {
-      console.log(response.data.hobbiesList)
+      // console.log(response.data.hobbiesList)
       // console.log("myhobbies",hobbies)
       this.setState({
         hobbies: response.data.hobbiesList.slice()
@@ -129,13 +129,23 @@ export default class App extends Component {
   })
 }
 
+  // ProfileHandler = (user)=>{
+  //   // Axios.get('/profile',user)
+  //   // .then(response=>{
+
+  //   // })
+  //   // .catch(error=>{
+  //   //   console.log(error)
+  //   // })
+  // }
+
   render() {
-    console.log("Main app",this.state.hobbies)
+    // console.log("Main app",this.state.hobbies)
     const message = this.state.message ? (
       <Alert variant='danger'>{this.state.message}</Alert>
     ) : null
     const {isAuth} = this.state
-    console.log("the user is", this.state.user)
+    // console.log("the user is", this.state.user)
     return (
       <div>
       {/* {message} */}
@@ -146,7 +156,7 @@ export default class App extends Component {
                 <Nav.Link href="/" className='text-white'>Home</Nav.Link>
               </Nav.Item>
               <Nav.Item as="li">
-                <Nav.Link className='text-white'>{this.state.user ? this.state.user.user.name : null}</Nav.Link>
+                <Nav.Link href='/profile' className='text-white'>{this.state.user ? this.state.user.user.name : null}</Nav.Link>
               </Nav.Item>
               <Nav.Item as="li">
                 <Nav.Link href="/logout" onClick={this.logoutHandler} className='text-white'>Logout</Nav.Link>
@@ -184,6 +194,7 @@ export default class App extends Component {
               <Route path='/hobbylist' element={<HobbyList hobbies={this.state.hobbies} />}> </Route>
               <Route path='/eventcreateform' element={<EventCreateForm user={this.state.user.user} eventy={this.createEventHandler} />}></Route>
               {console.log(this.state.user.user)}
+              <Route path='/profile' element={<Profile user={this.state.user.user||1 }/>} ></Route>
 
               
 
