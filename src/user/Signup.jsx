@@ -23,13 +23,18 @@ export default function Signup(props) {
    
     const selectHobby = (e) => {
         let hobi = hobbyState
+        if(hobi.indexOf(e.target.value) < 0){
         hobi.push(e.target.value)
         console.log(hobi)
         setHobby(hobi)
+        }
     }
 
-    const registerHandler = () => {
+    const registerHandler = async() => {
         props.register(user)
+        console.log("hobby state", {hobbyState})
+        console.log("user", user)
+        await Axios.post(`/hobbyUser/${user.emailAddress}`,hobbyState)
         navigate('/')
     }
 
