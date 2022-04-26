@@ -15,10 +15,10 @@ export default function EventCreateForm(props){
 
     useEffect( () => {
        setuserId(props)
-       console.log(userId, 'this is console loggins test')
+       
     }, [])
     
-    
+    console.log(userId, 'this is console loggins test')
     
     const changeHandler = (e) => {
         let temp = {...event}
@@ -39,6 +39,7 @@ export default function EventCreateForm(props){
 
     const createEventHandler = () => {
         props.eventy(event)
+        setMain(mainUser)
         navigate('/')
     }
 // console.log("the props.user is:",props.user.id)
@@ -82,14 +83,11 @@ export default function EventCreateForm(props){
           </Form.Group>
               
               
-        <Button name="user" onCick={originalUser}></Button>
+        <Button name="user" onClick={originalUser}></Button>
         <Button variant='primary' onClick={createEventHandler}>Create</Button>
 
       </Container>
       </div>
-    
-
-    
    </>
   )
 } 

@@ -130,7 +130,8 @@ export default class App extends Component {
   }
   
   createEventHandler = (e)=>{
-    Axios.post('/eventcreateform', e)
+    let userId =this.state.user.user.id
+    Axios.post(`/eventcreateform/${userId}`, e)
     .then(response=>{
       console.log(response)
       this.setState({event:response.data})
