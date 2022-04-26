@@ -41,6 +41,9 @@ export default function Signup(props) {
     console.log("This is my response",user)
     console.log("my hobbies outside",props.hobbies)
 
+    // creating array and that array has the hobby buttons
+    // pases the hobby id to the selecthobby function, and it adds it to the hobi list
+    // and the setHobby statelist
     const hobbyArr = props.hobbies.map((hobby, index) => (
         <Button name='hobby' type='button'  key={index} onClick={selectHobby} value={hobby._id} multiple >{hobby.name}</Button> 
         )
