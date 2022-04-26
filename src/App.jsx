@@ -9,8 +9,11 @@ import Axios from "axios"
 import jwt_decode from "jwt-decode"
 import { Alert, Nav, NavItem } from "react-bootstrap" 
 import HobbyList from './hobby/HobbyList'
-import EventCreateForm from './event/EventCreateForm'
 import Profile from './user/Profile'
+import EventCreateForm from './event/EventCreateForm' 
+import HobbyDetail from './hobby/HobbyDetail'
+
+
 
 export default class App extends Component {
   
@@ -53,7 +56,17 @@ export default class App extends Component {
     }
   }
 
-  
+  // showHobbyDetail = (id) => { 
+  //   Axios.get('/hobbydetail') 
+  //   .then(response => {
+  //     console.log(response.data.hobbyDetail)
+  //     // console.log("myhobbies",hobbies)
+  //     this.setState({
+  //       hobbies: response.data.hobbyDetail.slice()
+  //     })
+  //   }
+  //   )}
+  // }
 
 
   registerHandler = (user) => {
@@ -118,7 +131,8 @@ export default class App extends Component {
   }
   
   createEventHandler = (e)=>{
-    Axios.post('/eventcreateform', e)
+    let userId =this.state.user.user.id
+    Axios.post(`/eventcreateform/${userId}`, e)
     .then(response=>{
       console.log(response)
       this.setState({event:response.data})
@@ -191,13 +205,23 @@ export default class App extends Component {
               <Route path='/' element={ isAuth ? <HomeLoggedIn /> : <HomeLoggedOut />}></Route>
               <Route path='/signup' element={<Signup register={this.registerHandler} hobbies={this.state.hobbies} />}></Route>
               <Route path='/signin' element={<Signin login={this.loginHandler} />}></Route>
-              <Route path='/hobbylist' element={<HobbyList hobbies={this.state.hobbies} />}> </Route>
+
+              <Route path='/hobbylist' element={<HobbyList hobbies={this.state.hobbies} />}> </Route> 
+
+              <Route path='/hobbydetail/:id' element={<HobbyDetail/>}> </Route> 
+
+              {/* {this.state.hobbies.map(hobby => <Route path="/hobby/:_id" element={<HobbyDetail />} /> ) }  */}
+             
               <Route path='/eventcreateform' element={<EventCreateForm user={this.state.user.user} eventy={this.createEventHandler} />}></Route>
               {console.log(this.state.user.user)}
               <Route path='/profile' element={<Profile user={this.state.user.user||1 }/>} ></Route>
 
+
+              {/* <Route path='/eventcreateform' element={<HobbyList hobbies={this.state.hobbies} />}> </Route>   */}
+              <Route path='/eventcreateform' element={<EventCreateForm hobbies={this.state.hobbies} />}> </Route> 
               
 
+            
             </Routes>
           </div>
         </Router>
