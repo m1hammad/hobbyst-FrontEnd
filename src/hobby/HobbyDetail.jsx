@@ -18,6 +18,7 @@ export default function Hobby() {
   .catch(error => console.log(error)) 
   console.log() 
 
+  // let link = `eventcreatefrom/${props.hobby._id}` 
 
     return (
       <> 
@@ -30,7 +31,7 @@ export default function Hobby() {
             <h1 className='title'>Events</h1> 
             <p> map over all tagged to this particular hobby and display them as an index</p>   
             {/* <EventList></EventList> */}
-            <EventCreateForm></EventCreateForm>
+            {/* <EventCreateForm></EventCreateForm> */}
         </div>
       }
       </>

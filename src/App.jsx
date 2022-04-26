@@ -190,7 +190,7 @@ export default class App extends Component {
           <Router>
           <div>
             <Routes>
-              <Route path='/' element={ isAuth ? <HomeLoggedIn /> : <HomeLoggedOut />}></Route>
+              <Route path='/' element={ isAuth ? <HomeLoggedIn user={this.state.user.user} hobbies={this.state.hobbies} /> : <HomeLoggedOut />}></Route>
               <Route path='/signup' element={<Signup register={this.registerHandler} hobbies={this.state.hobbies} />}></Route>
               <Route path='/signin' element={<Signin login={this.loginHandler} />}></Route>
 
