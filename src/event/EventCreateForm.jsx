@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import {Container, Form, Button,} from "react-bootstrap"
 import { useNavigate } from "react-router";
-import { FormGroup } from 'react-bootstrap'
+import { FormGroup } from 'react-bootstrap';
+import Axios from 'axios'
 //import Hobby from "../models/Hobby"
 
 export default function EventCreateForm(props){
@@ -12,22 +13,30 @@ export default function EventCreateForm(props){
     const [event, setEvent] = useState(null);
     const [mainUser, setMain] = useState([]);
     const [userId, setuserId] = useState(null)
+    const [hobbyState, setHobby] = useState([])
 
     useEffect( () => {
        setuserId(props)
        
     }, [])
-    
-    console.log(userId, 'this is console loggins test')
-    
+    console.log("props:", props)
+       
     const changeHandler = (e) => {
         let temp = {...event}
         temp[e.target.name] = e.target.value
         temp.user = mainUser
+        temp.hobby = hobbyState
         console.log("this is temp", temp)
         setEvent(temp)
     }
-    console.log("this evetn is",event)
+    // this saves the clicked hobbies
+    const selectHobby = (e) => {
+        let hobi = hobbyState
+        hobi.push(e.target.value)
+        console.log(hobi)
+        setHobby(hobi)
+    }
+
  
     const originalUser = (e) =>{
         let creator = mainUser
@@ -42,10 +51,13 @@ export default function EventCreateForm(props){
         setMain(mainUser)
         navigate('/')
     }
-// console.log("the props.user is:",props.user.id)
-
-
-//   console.log(this.state.newEvent)
+    // creating array and that array has the hobby buttons
+    // pases the hobby id to the selecthobby function, and it adds it to the hobi list
+    // and the setHobby statelist
+    const hobbyArr = props.hobbies.map((hobby, index) => (
+        <Button name='hobby' type='button'  key={index} onClick={selectHobby} value={hobby._id} multiple >{hobby.name}</Button> 
+        )
+        )
 
   return (
     <>
@@ -59,7 +71,7 @@ export default function EventCreateForm(props){
           </Form.Group>
           <Form.Group>
               <Form.Label>Photo</Form.Label>
-              <Form.Control name="photo" onChange={changeHandler}></Form.Control>
+              <Form.Control name="photo" type="string" ></Form.Control>
           </Form.Group>
           <Form.Group>
               <Form.Label>Description</Form.Label>
@@ -67,7 +79,7 @@ export default function EventCreateForm(props){
           </Form.Group>
           <Form.Group>
               <Form.Label>Date and Time</Form.Label>
-              <Form.Control name="dateAndTime" onChange={changeHandler}></Form.Control>
+              <Form.Control name="dateAndTime" type='datetime-local' onChange={changeHandler}></Form.Control>
           </Form.Group>
           <Form.Group>
               <Form.Label>Maximum Participants</Form.Label>
@@ -81,9 +93,18 @@ export default function EventCreateForm(props){
               <Form.Label>Precice Location</Form.Label>
               <Form.Control name="preciseLocation" onChange={changeHandler}></Form.Control>
           </Form.Group>
+
+          <Form.Group>
+                <Form.Label>Hobbies:</Form.Label> <br/>
+                {/* <select class="select" multiple> */}
+                {/* <Form.Select options={aquaticCreatures} className="select" name="hobby[]" onChange={changeHandler} multiple="" data-live-search="true"> */}
+                    {hobbyArr}
+                    {/* <Button type='button' name='hobby[]' onClick={changeHandler} value="hi" >Hi</Button> */}
+                    {/* </select> */}
+                {/* </Form.Select> */}
+            </Form.Group>
+
               
-              
-        <Button name="user" onClick={originalUser}></Button>
         <Button variant='primary' onClick={createEventHandler}>Create</Button>
 
       </Container>
