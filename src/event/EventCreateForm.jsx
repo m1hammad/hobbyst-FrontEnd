@@ -3,7 +3,8 @@ import {Container, Form, Button,} from "react-bootstrap"
 import { useNavigate } from "react-router";
 import { FormGroup } from 'react-bootstrap';
 import Axios from 'axios'
-//import Hobby from "../models/Hobby"
+//import Hobby from "../models/Hobby" 
+import jwt_decode from "jwt-decode"
 
 export default function EventCreateForm(props){
 
@@ -12,11 +13,24 @@ export default function EventCreateForm(props){
     // const [user, setUser] = useState(null);
     const [event, setEvent] = useState(null);
     const [mainUser, setMain] = useState([]);
-    const [userId, setuserId] = useState(null)
+    const [userId, setUserId] = useState(null)
     const [hobbyState, setHobby] = useState([])
 
     useEffect( () => {
-       setuserId(props)
+    //    setUserId(props.user)
+       let token = localStorage.getItem("token") 
+       if(token !== null){
+        let user = jwt_decode(token)
+        if(user){
+            setUserId(user.user.id)
+        }
+        else{
+          localStorage.removeItem("token")
+          setUserId(0)
+        }
+      }
+
+       
        
     }, [])
 
@@ -48,8 +62,9 @@ export default function EventCreateForm(props){
     }
 
     const createEventHandler = () => {
-        props.eventy(event,props.user.id)
-        props.eventy(event)
+        console.log(userId)
+        props.eventy(event,userId)
+        // props.eventy(event)
         setMain(mainUser)
 
         navigate('/')
@@ -61,6 +76,8 @@ export default function EventCreateForm(props){
         <Button name='hobby' type='button'  key={index} onClick={selectHobby} value={hobby._id} multiple >{hobby.name}</Button> 
         )
         )
+
+        console.log(userId)
 
   return (
     <>
