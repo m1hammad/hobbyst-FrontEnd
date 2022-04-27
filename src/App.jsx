@@ -213,15 +213,15 @@ export default class App extends Component {
               <Route path='/signup' element={<Signup register={this.registerHandler} hobbies={this.state.hobbies} />}></Route>
               <Route path='/signin' element={<Signin login={this.loginHandler} />}></Route>
 
-              <Route path='/hobbylist' element={<HobbyList hobbies={this.state.hobbies} />}> </Route> 
+              <Route path='/hobbylist' element={isAuth ? <HobbyList hobbies={this.state.hobbies} /> : <HomeLoggedOut />}> </Route> 
 
-              <Route path='/hobbydetail/:id' element={<HobbyDetail user={this.state.user.user} hobbies={this.state.hobbies} />}> </Route> 
+              <Route path='/hobbydetail/:id' element={isAuth ? <HobbyDetail user={this.state.user.user} hobbies={this.state.hobbies} /> : <HomeLoggedOut />}> </Route> 
 
               {/* {this.state.hobbies.map(hobby => <Route path="/hobby/:_id" element={<HobbyDetail />} /> ) }  */}
              
 
-              <Route path='/profile' element={<Profile user={this.state.user.user||1 }/>} ></Route>
-              <Route path='/eventcreateform' element={<EventCreateForm hobbies={this.state.hobbies} user={this.state.user.user} eventy={this.createEventHandler} />}></Route>
+              <Route path='/profile' element={isAuth ? <Profile user={this.state.user.user||1 }/> : <HomeLoggedOut />} ></Route>
+              <Route path='/eventcreateform' element={isAuth ? <EventCreateForm hobbies={this.state.hobbies} user={this.state.user.user} eventy={this.createEventHandler} /> : <HomeLoggedOut />}></Route>
   
 
 
