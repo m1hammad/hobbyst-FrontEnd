@@ -69,7 +69,7 @@ export default class App extends Component {
   // }
 
 
-  registerHandler = (user) => {
+  registerHandler = async(user) => {
     Axios.post("auth/signup", user)
     .then(response =>{
       console.log('Signup response',response.data.token)
