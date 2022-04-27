@@ -19,8 +19,10 @@ export default function EventCreateForm(props){
        setuserId(props)
        
     }, [])
+
     console.log("props:", props)
        
+
     const changeHandler = (e) => {
         let temp = {...event}
         temp[e.target.name] = e.target.value
@@ -43,12 +45,13 @@ export default function EventCreateForm(props){
         creator.push(e.target.value)
         setMain(creator)
         console.log("the of user",creator)
-
     }
 
     const createEventHandler = () => {
+        props.eventy(event,props.user.id)
         props.eventy(event)
         setMain(mainUser)
+
         navigate('/')
     }
     // creating array and that array has the hobby buttons
@@ -92,7 +95,8 @@ export default function EventCreateForm(props){
           <Form.Group>
               <Form.Label>Precice Location</Form.Label>
               <Form.Control name="preciseLocation" onChange={changeHandler}></Form.Control>
-          </Form.Group>
+
+
 
           <Form.Group>
                 <Form.Label>Hobbies:</Form.Label> <br/>
