@@ -14,9 +14,8 @@ export default function HobbyItem(props) {
          {props.hobby.name}  
         </h3>
       <br></br>
-      <img src={props.hobby.photo}></img>  
-      </a>
+       <img className='hobbyIndexImg' src={props.hobby.photo}/> 
       {/* <HobbyDetail hobby={props.hobby} key={props.hobby.id}> </HobbyDetail> */}
-      </div>
+      </a> </div>
     );
   }

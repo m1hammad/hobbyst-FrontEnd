@@ -28,13 +28,15 @@ export default function Hobby(props) {
     console.log(hobby.events)
   }
 
+
+
     return (
       <>
       {hobby&& 
         <div>
-          <div className='hobbyTitle'> 
+          <div className='hobbyTitleCard'> 
             <h1 className='title'>{hobby.name}</h1>  
-            {/* <img src={hobby.photo}></img>  */}
+            <img className="hobbyDetailImg" src={hobby.photo}></img> 
           </div>
             <h1 className='title'>Events</h1>  
             
