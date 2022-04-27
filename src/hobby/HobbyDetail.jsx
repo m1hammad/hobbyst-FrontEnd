@@ -12,11 +12,11 @@ export default function Hobby(props) {
   const [hobby,setHobby] = useState() 
 
   useEffect( () => { 
-    
-    Axios.get(`${params.id}`)
+    Axios.get(`/hobbydetail/${params.id}`)
     .then(response => {
-      console.log(response.data.hobby) 
-      setHobby(response.data.hobby)
+      console.log(response.data, "unique")  
+      // hobby = params.id
+      setHobby(response.data)
     }) 
     .catch(error => console.log(error)) 
     console.log() 
@@ -24,9 +24,12 @@ export default function Hobby(props) {
   []
   )
   
+  if (hobby){ 
+    console.log(hobby.events)
+  }
 
     return (
-      <> 
+      <>
       {hobby&& 
         <div>
           <div className='hobbyTitle'> 
@@ -35,13 +38,14 @@ export default function Hobby(props) {
           </div>
             <h1 className='title'>Events</h1>  
             
-            {/* <p> {hobby.events} </p>   */}
-            {hobby.events.map((hobby, event, index) => ( <div className="eventItems"> <EventItem event={event} hobby={hobby} key={index} /> </div>))}  
+            <p>  
+              {hobby.events.map((event, index) => ( <div className="eventItems" key={index}> <EventItem event={event} key={index}/> </div>))}
+            </p>
             {/* <EventList></EventList> */}
             <button> <a href="/eventcreateform"> Create New Event </a> </button>
             {/* <EventCreateForm></EventCreateForm> */}
         </div>
-      }
+       }
       </>
     )
   }
