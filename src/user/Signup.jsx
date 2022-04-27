@@ -48,7 +48,6 @@ export default function Signup(props) {
         <Button name='hobby' type='button'  key={index} onClick={selectHobby} value={hobby._id} multiple >{hobby.name}</Button> 
         )
         )
-    console.log('yo', hobbyArr)
 
     return (
       <div>
@@ -87,13 +86,7 @@ export default function Signup(props) {
                 
             <Form.Group>
                 <Form.Label>Hobbies:</Form.Label> <br/>
-                {/* <select class="select" multiple> */}
-                {/* <Form.Select options={aquaticCreatures} className="select" name="hobby[]" onChange={changeHandler} multiple="" data-live-search="true"> */}
                     {hobbyArr}
-                    {/* <Button type='button' name='hobby[]' onClick={changeHandler} value="hi" >Hi</Button> */}
-                    {/* </select> */}
-                {/* </Form.Select> */}
-
             </Form.Group>
            
 
@@ -104,17 +97,3 @@ export default function Signup(props) {
     )
 } 
 
-// const Dropdown = ({
-//     options
-//   }) => {
-//     const [selectedOption, setSelectedOption] = useState(options[0].value);
-//     return (
-//         <select
-//           value={selectedOption}
-//           onChange={e => setSelectedOption(e.target.value)}>
-//           {options.map(o => (
-//             <option key={o.value} value={o.value}>{o.label}</option>
-//           ))}
-//         </select>
-//     );
-//   };
