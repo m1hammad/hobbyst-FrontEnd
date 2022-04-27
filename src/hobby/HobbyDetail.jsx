@@ -2,7 +2,8 @@ import React, {useEffect, useState} from 'react'
 // import EventCreateForm from '../event/EventCreateForm'
 // import EventList from "../event/EventList" 
 import {useParams} from "react-router-dom" 
-import Axios from "axios"
+import Axios from "axios" 
+import EventItem from "../event/EventItem"
 
 export default function Hobby(props) {  
  
@@ -24,9 +25,6 @@ export default function Hobby(props) {
   )
   
 
-  
-  console.log(hobby.events)
-
     return (
       <> 
       {hobby&& 
@@ -37,7 +35,8 @@ export default function Hobby(props) {
           </div>
             <h1 className='title'>Events</h1>  
             
-            <p> {hobby.events} does this work?</p>   
+            {/* <p> {hobby.events} </p>   */}
+            {hobby.events.map((hobby, event, index) => ( <div className="eventItems"> <EventItem event={event} hobby={hobby} key={index} /> </div>))}  
             {/* <EventList></EventList> */}
             <button> <a href="/eventcreateform"> Create New Event </a> </button>
             {/* <EventCreateForm></EventCreateForm> */}

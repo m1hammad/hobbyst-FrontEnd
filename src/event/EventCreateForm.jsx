@@ -94,7 +94,8 @@ export default function EventCreateForm(props){
           </Form.Group>
           <Form.Group>
               <Form.Label>Precice Location</Form.Label>
-              <Form.Control name="preciseLocation" onChange={changeHandler}></Form.Control>
+              <Form.Control name="preciseLocation" onChange={changeHandler}></Form.Control> 
+           </Form.Group> 
 
 
 
