@@ -57,9 +57,45 @@ a{
 
 .title { 
   text-align: center; 
-
 } 
 
 #username{ 
   color:blue
+} 
+
+.hobbyIndexImg{ 
+  width: 250px; 
+  height: 10em;
+} 
+
+.hobbyTitleCard{ 
+  width :min-content; 
+  margin-top: 0.5em; 
+  align-items: center;  
+  padding:1em; 
+  margin: 0 auto; 
+}  
+
+.hobbyTitleCard .title{
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  right: 0;        
+  text-align: center;
+  top: 10%; 
+  font-family: Arial,sans-serif;
+  color: rgb(255, 255, 255);
+  color: white;
+  font-size: 50px;
+  text-shadow: -1px 1px 0 #000,
+        1px 1px 0 #000,
+        1px -1px 0 #000,
+        -1px -1px 0 #000;
+  width: 60%;  
+  margin: 0 auto;
 }
+
+.hobbyDetailImg{ 
+  width: 500px; 
+  align-items: center;
+} 
