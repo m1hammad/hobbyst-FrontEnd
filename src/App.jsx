@@ -129,8 +129,9 @@ export default class App extends Component {
     })
   }
   
-  createEventHandler = (e)=>{
-    Axios.post('/eventcreateform', e)
+  createEventHandler = (eventy,userId)=>{
+    console.log(eventy)
+    Axios.post(`http://localhost:4000/eventcreateform/${userId}`, eventy)
     .then(response=>{
       console.log(response)
       this.setState({event:response.data})
@@ -196,7 +197,7 @@ export default class App extends Component {
 
               <Route path='/hobbylist' element={<HobbyList hobbies={this.state.hobbies} />}> </Route> 
 
-              <Route path='/hobbydetail/:id' element={<HobbyDetail/>}> </Route> 
+              <Route path='/hobbydetail/:id' element={<HobbyDetail user={this.state.user.user} />}> </Route> 
 
               {/* {this.state.hobbies.map(hobby => <Route path="/hobby/:_id" element={<HobbyDetail />} /> ) }  */}
              
@@ -205,7 +206,7 @@ export default class App extends Component {
 
 
               {/* <Route path='/eventcreateform' element={<HobbyList hobbies={this.state.hobbies} />}> </Route>   */}
-              <Route path='/eventcreateform' element={<EventCreateForm hobbies={this.state.hobbies} />}> </Route> 
+              {/* <Route path='/eventcreateform' element={<EventCreateForm hobbies={this.state.hobbies} />}> </Route>  */}
               
 
             
