@@ -130,9 +130,11 @@ export default class App extends Component {
     })
   }
   
-  createEventHandler = (e)=>{
-    let userId =this.state.user.user.id
-    Axios.post(`/eventcreateform/${userId}`, e)
+
+  createEventHandler = (eventy,userId)=>{
+    console.log(eventy)
+    Axios.post(`http://localhost:4000/eventcreateform/${userId}`, eventy)
+
     .then(response=>{
       console.log(response)
       this.setState({event:response.data})
@@ -202,23 +204,26 @@ export default class App extends Component {
           <Router>
           <div>
             <Routes>
-              <Route path='/' element={ isAuth ? <HomeLoggedIn /> : <HomeLoggedOut />}></Route>
+              <Route path='/' element={ isAuth ? <HomeLoggedIn user={this.state.user.user} hobbies={this.state.hobbies} /> : <HomeLoggedOut />}></Route>
               <Route path='/signup' element={<Signup register={this.registerHandler} hobbies={this.state.hobbies} />}></Route>
               <Route path='/signin' element={<Signin login={this.loginHandler} />}></Route>
 
               <Route path='/hobbylist' element={<HobbyList hobbies={this.state.hobbies} />}> </Route> 
 
-              <Route path='/hobbydetail/:id' element={<HobbyDetail/>}> </Route> 
+              <Route path='/hobbydetail/:id' element={<HobbyDetail user={this.state.user.user} />}> </Route> 
 
               {/* {this.state.hobbies.map(hobby => <Route path="/hobby/:_id" element={<HobbyDetail />} /> ) }  */}
              
-              <Route path='/eventcreateform' element={<EventCreateForm user={this.state.user.user} eventy={this.createEventHandler} />}></Route>
-              {console.log(this.state.user.user)}
+
               <Route path='/profile' element={<Profile user={this.state.user.user||1 }/>} ></Route>
+              <Route path='/eventcreateform' element={<EventCreateForm hobbies={this.state.hobbies} user={this.state.user.user} eventy={this.createEventHandler} />}></Route>
+  
+
 
 
               {/* <Route path='/eventcreateform' element={<HobbyList hobbies={this.state.hobbies} />}> </Route>   */}
-              <Route path='/eventcreateform' element={<EventCreateForm hobbies={this.state.hobbies} />}> </Route> 
+              {/* <Route path='/eventcreateform' element={<EventCreateForm hobbies={this.state.hobbies} />}> </Route>  */}
+
               
 
             

@@ -1,23 +1,29 @@
-import React, {useState} from 'react' 
-import EventCreateForm from '../event/EventCreateForm'
+import React, {useEffect, useState} from 'react' 
+// import EventCreateForm from '../event/EventCreateForm'
 // import EventList from "../event/EventList" 
 import {useParams} from "react-router-dom" 
-import Axios from "axios"
+import Axios from "axios" 
+import EventItem from "../event/EventItem"
 
-export default function Hobby() {
-
+export default function Hobby(props) {  
+ 
   const params = useParams(); 
   console.log(params.id)  
-  const [hobby,setHobby] = useState()
+  const [hobby,setHobby] = useState() 
 
-  Axios.get(`${params.id}`)
-  .then(response => {
-    console.log(response.data.hobby) 
-    setHobby(response.data.hobby)
-  }) 
-  .catch(error => console.log(error)) 
-  console.log() 
-
+  useEffect( () => { 
+    
+    Axios.get(`${params.id}`)
+    .then(response => {
+      console.log(response.data.hobby) 
+      setHobby(response.data.hobby)
+    }) 
+    .catch(error => console.log(error)) 
+    console.log() 
+  }, 
+  []
+  )
+  
 
     return (
       <> 
@@ -25,12 +31,15 @@ export default function Hobby() {
         <div>
           <div className='hobbyTitle'> 
             <h1 className='title'>{hobby.name}</h1>  
-            <img src={hobby.photo}></img> 
+            {/* <img src={hobby.photo}></img>  */}
           </div>
-            <h1 className='title'>Events</h1> 
-            <p> map over all tagged to this particular hobby and display them as an index</p>   
+            <h1 className='title'>Events</h1>  
+            
+            {/* <p> {hobby.events} </p>   */}
+            {hobby.events.map((hobby, event, index) => ( <div className="eventItems"> <EventItem event={event} hobby={hobby} key={index} /> </div>))}  
             {/* <EventList></EventList> */}
-            <EventCreateForm></EventCreateForm>
+            <button> <a href="/eventcreateform"> Create New Event </a> </button>
+            {/* <EventCreateForm></EventCreateForm> */}
         </div>
       }
       </>
