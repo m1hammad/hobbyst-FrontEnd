@@ -4,7 +4,7 @@ import Signup from './user/Signup'
 import Signin from './user/Signin'
 import HomeLoggedIn from './landingPage/HomeLoggedIn'
 import HomeLoggedOut from './landingPage/HomeLoggedOut'
-import {BrowserRouter as Router, Route, Routes, Link} from "react-router-dom"
+import {BrowserRouter as Router, Route, Routes, Redirect} from "react-router-dom"
 import Axios from "axios"
 import jwt_decode from "jwt-decode"
 import { Alert, Nav, NavItem } from "react-bootstrap" 
