@@ -2,11 +2,14 @@
 
 ## Add your hobbies, and find events related to those hobbies! Make your own event and watch the new collections trickle in. 
 
+<hr>
 ##Below you will find screenshots with functionality, a little about the team, the technologies used. 
+<hr>
 
-Technologies Used: React, Atlas,
+###Technologies Used: MERN STACK (MongoDB/Mongoose, Express, React, Node) with full CRUD functionality.
 
-### Lila: the person writing this ReadME is super cool. She loves hiking, trying new things, being outside and reading books to expand her EQ. Since Corona started, and since graduating university, I've found it very hard to make friends. That was why I found this project very interesting and personal to myself. 
+<hr>
+### Lila: the person writing this README is super cool. She loves hiking, trying new things, being outside and reading books to expand her EQ. Since Corona started, and since graduating university, she's found it very hard to make friends. That was why she found this project very interesting and personal.
 
 ### Andrew: 
 
@@ -14,7 +17,7 @@ Technologies Used: React, Atlas,
 
 ### Hammad: 
 
-! [Our front page introduces what the webapp is about](google.com)
+![Our front page introduces what the webapp is about](google.com)
 
 To start, click 'sign up'. After creating your profile, you will be logged in.
 ![Your main page will look like this](google.com)
