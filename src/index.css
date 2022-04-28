@@ -182,7 +182,6 @@ a{
   outline: none;
   margin-left: 550px; 
   font-size: 30px; 
-  transform: translateY(-25px);
 }
 
 .createBtn:hover {
