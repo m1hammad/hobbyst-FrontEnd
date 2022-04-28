@@ -226,7 +226,7 @@ export default class App extends Component {
              
 
               <Route path='/profile' element={isAuth ? <Profile user={this.state.user.user||1 }/> : <HomeLoggedOut />} ></Route>
-              <Route path='/profile/edit/:id' element={isAuth ? <ProfileEdit user={this.state.user.user||1 }/> : <HomeLoggedOut />} ></Route>
+              <Route path='/profile/edit/:id' element={isAuth ? <ProfileEdit user={this.state.user.user||1 } hobbies={this.state.hobbies}/> : <HomeLoggedOut />} ></Route>
               <Route path='/profile/delete/:id' element={isAuth ? <ProfileDelete user={this.state.user.user||1 }/> : <HomeLoggedOut />} ></Route>
 
               <Route path='/eventcreateform' element={isAuth ? <EventCreateForm hobbies={this.state.hobbies} user={this.state.user.user} eventy={this.createEventHandler} /> : <HomeLoggedOut />}></Route>
