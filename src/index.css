@@ -55,6 +55,7 @@ background: linear-gradient(10deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(
   padding:1em; 
   background-image: linear-gradient(deepskyblue, rgb(21, 84, 105));
   border-radius: 4%;
+  box-shadow: 4px 4px 10px grey;
 }   
 
 .HobbyItem .name {
@@ -103,7 +104,7 @@ a{
   margin-top: 0.5em; 
   align-items: center;  
   padding:1em; 
-  margin: 0 auto; 
+  margin: 0 auto;  
 }  
 
 .hobbyTitleCard .title{
@@ -127,7 +128,8 @@ a{
   width: 500px; 
   align-items: center; 
   border-radius: 4%; 
-  border: 2px solid yellow
+  border: 2px solid yellow;
+  box-shadow: 4px 4px 10px grey;
 } 
 
 .createBtn{ 
@@ -143,19 +145,39 @@ a{
   }
 
   .createBtn:hover {
-    transition: 1s ease-in-out;
-    background-color:black ;
+    transition: 0.3s ease-in-out;
+    background-color:rgb(224, 255, 49) ; 
+    color: rgb(66, 66, 66); 
+    border: 1px solid white;
   }
   
   .createBtn span {
     color: white;
     font-size: 30px;
   }
+ 
+  .createNewBtn{ 
+    background: #1d92ff;
+    width: 180px;
+    height: 60px;
+    cursor: pointer;
+    border: 1px solid #1d92ff;
+    outline: none;
+    font-size: 30px; 
+  }
+
+  
+  .createNewBtn:hover {
+    transition: 0.3s ease-in-out;
+    background-color:rgb(224, 255, 49) ; 
+    color: rgb(66, 66, 66); 
+    border: 1px solid white;
+  }
 
   .hobbyBtns{ 
     margin: 5px;
   } 
 
- nav .float-right{ 
+ /* nav .float-right{ 
     float: right;
-  }
+  } */
