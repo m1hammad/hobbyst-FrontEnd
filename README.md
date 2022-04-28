@@ -1,4 +1,4 @@
-@@ Have you ever wanted to make friends based on your hobby and don't know where to begin? Join Hobbyst! @@
+@@Have you ever wanted to make friends based on your hobby and don't know where to begin? Join Hobbyst!@@
 
 ## Add your hobbies, and find events related to those hobbies! Make your own event and watch the new collections trickle in. 
 
