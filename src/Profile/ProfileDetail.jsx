@@ -20,7 +20,7 @@ export default function Profile (props)  {
         // console.log('useEffected')
         console.log(props.user.id)
         if(props.user.id){   
-            Axios.get(`profile/?id=${props.user.id}`)
+            Axios.get(`/profile?id=${props.user.id}`)
             .then(response=>{
                 setProfile(response.data)
                 console.log(response)

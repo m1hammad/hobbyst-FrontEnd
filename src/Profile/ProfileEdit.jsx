@@ -26,7 +26,7 @@ export default function ProfileEdit(props){
         // console.log('useEffected')
         console.log(props.user.id)
         if(props.user.id){   
-            Axios.get(`/api/auth/user/${params.id}`)
+            Axios.get(`/profile?id=${props.user.id}`)
             .then(response=>{
                 setProfile(response.data)
                 console.log(response.data)
@@ -36,7 +36,7 @@ export default function ProfileEdit(props){
             })
         }
     },[props.user.id])
-
+    console.log('profile is',profileState)
     const selectHobby = (e) => {
         let hobi = hobbyState
         if(hobi.indexOf(e.target.value) < 0){
