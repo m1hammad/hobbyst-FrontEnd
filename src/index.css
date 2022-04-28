@@ -8,7 +8,8 @@ body {
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -moz-osx-font-smoothing: grayscale; 
+  background-color: rgb(226, 251, 255);
 }
 
 code {
@@ -17,8 +18,12 @@ code {
 }
 
 .nav{
-  background: rgb(2,0,36);
+/* background: rgb(2,0,36); */
 background: linear-gradient(10deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+}
+
+#home{ 
+  float: left;
 }
 
 #loggedout{
@@ -36,17 +41,40 @@ background: linear-gradient(10deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(
   z-index: -1;
 } 
 
+.hobbyIndexImg{ 
+  width: 250px; 
+  height: 10em; 
+  margin: 0 auto; 
+  border-radius: 4%;
+} 
+
 .HobbyItem{ 
-  border: 1px solid black; 
   width :max-content; 
   margin-top: 0.5em; 
   align-items: center;  
-  padding:1em;
+  padding:1em; 
+  background-image: linear-gradient(deepskyblue, rgb(21, 84, 105));
+  border-radius: 4%;
+}   
+
+.HobbyItem .name {
+  z-index: 999;
+  left: 20%;
+  right: 0;       
+  top: 0%; 
+  color: rgb(255, 255, 255);
+  font-size: 30px;
+  text-shadow: -1px 1px 0 rgb(29, 23, 23),
+        1px 1px 0 #000,
+        1px -1px 0 #000,
+        -1px -1px 0 #000;
+  width: 60%;  
 } 
+
 
 .hobbyList{ 
   display: inline-flex; 
-  align-items: center; 
+  align-items: center;
   margin: 1em; 
 } 
 
@@ -56,17 +84,19 @@ a{
 }  
 
 .title { 
-  text-align: center; 
+  font-size: 67px;
+  text-align: center;   
+  color: #1d92ff;  
+  text-shadow: -1px 1px 0 #000,
+  1px 1px 0 yellow,
+  1px 1px 0 rgb(43, 29, 240),
+  1px 1px 0 rgb(43, 29, 240);
 } 
 
 #username{ 
   color:blue
 } 
 
-.hobbyIndexImg{ 
-  width: 250px; 
-  height: 10em;
-} 
 
 .hobbyTitleCard{ 
   width :min-content; 
@@ -83,12 +113,10 @@ a{
   right: 0;        
   text-align: center;
   top: 10%; 
-  font-family: Arial,sans-serif;
   color: rgb(255, 255, 255);
-  color: white;
-  font-size: 50px;
+  font-size: 65px;
   text-shadow: -1px 1px 0 #000,
-        1px 1px 0 #000,
+        4px 4px 0 #000,
         1px -1px 0 #000,
         -1px -1px 0 #000;
   width: 60%;  
@@ -97,5 +125,37 @@ a{
 
 .hobbyDetailImg{ 
   width: 500px; 
-  align-items: center;
+  align-items: center; 
+  border-radius: 4%; 
+  border: 2px solid yellow
 } 
+
+.createBtn{ 
+    background: #1d92ff;
+    width: 180px;
+    height: 60px;
+    cursor: pointer;
+    border: 1px solid #1d92ff;
+    outline: none;
+    margin-left: 550px; 
+    font-size: 30px; 
+    transform: translateY(-25px);
+  }
+
+  .createBtn:hover {
+    transition: 1s ease-in-out;
+    background-color:black ;
+  }
+  
+  .createBtn span {
+    color: white;
+    font-size: 30px;
+  }
+
+  .hobbyBtns{ 
+    margin: 5px;
+  } 
+
+ nav .float-right{ 
+    float: right;
+  }

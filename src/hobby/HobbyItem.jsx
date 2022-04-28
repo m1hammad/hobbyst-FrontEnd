@@ -10,12 +10,10 @@ export default function HobbyItem(props) {
       
       <div className='HobbyItem'> 
       <a href={link}>
-        <h3> 
-         {props.hobby.name}  
-        </h3>
-      <br></br>
+        {/* <h3 className='name'> {props.hobby.name} </h3> */}
        <img className='hobbyIndexImg' src={props.hobby.photo}/> 
       {/* <HobbyDetail hobby={props.hobby} key={props.hobby.id}> </HobbyDetail> */}
-      </a> </div>
+      </a> 
+      </div>
     );
   }
