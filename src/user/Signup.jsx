@@ -82,13 +82,12 @@ export default function Signup(props) {
                 <Form.Label>Province</Form.Label>
                 <Form.Control name="province" onChange={changeHandler}></Form.Control>
             </Form.Group>
-                
-                
-            <Form.Group>
-                <Form.Label>Hobbies:</Form.Label> <br/>
-                    {hobbyArr}
+            
+            <Form.Group style={{display:'none'}}>
+                <Form.Label>About</Form.Label>
+                <Form.Control name="about" onChange={changeHandler} value=' '></Form.Control>
             </Form.Group>
-           
+
 
             <Button variant='primary' onClick={registerHandler}>Register</Button>
 
