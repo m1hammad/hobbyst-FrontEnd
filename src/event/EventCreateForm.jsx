@@ -90,7 +90,7 @@ export default function EventCreateForm(props){
               <Form.Control name="title" onChange={changeHandler}></Form.Control>
           </Form.Group>
           <Form.Group>
-              <Form.Label>Photo Url:</Form.Label> 
+              <Form.Label>Photo Url</Form.Label> 
               <Form.Control name="photo" type="string" onChange={changeHandler}></Form.Control>
           </Form.Group>
           <Form.Group>

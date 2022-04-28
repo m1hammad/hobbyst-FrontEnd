@@ -90,7 +90,7 @@ export default function Profile (props)  {
                             </Col>
 
                             <Col sm style={{justifyContent:'center',textAlign:'center'}}>
-                            <h1>My Events!</h1>
+                            <h1 className="eventsHeading">My Events</h1>
                             <ul style={{  listStyleType: 'none', margin:'0 auto',padding:'0'}}>
                                 {
                                     profileState.events.map(function(event,index){

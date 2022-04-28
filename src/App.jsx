@@ -180,22 +180,21 @@ export default class App extends Component {
             { isAuth ? (
               <Nav  as="ul" className="justify-content-center nav">
               
-              <Nav.Item as="li">
-                <Nav.Link href="/" className='text-white' id="home" >Home</Nav.Link>
+              <Nav.Item as="li" className="home">
+                <Nav.Link href="/" >Home</Nav.Link>
               </Nav.Item>
               <Nav.Item as="li">
-                <Nav.Link href='/profile' className='text-white'>{this.state.user ? this.state.user.user.name : null}</Nav.Link>
+                <Nav.Link href='/profile' >{this.state.user ? this.state.user.user.name : null}</Nav.Link>
               </Nav.Item>
               <Nav.Item as="li">
-                <Nav.Link href="/logout" onClick={this.logoutHandler} className='text-white'>Logout</Nav.Link>
-              </Nav.Item>
-              <Nav.Item as="li">
-              <Nav.Link href="/hobbylist" className='text-white'>Hobbies</Nav.Link>
+              <Nav.Link href="/hobbylist" >Hobbies</Nav.Link>
             </Nav.Item>
             <Nav.Item>
-            <Nav.Link href="/eventcreateform" className='text-white'>New Event</Nav.Link>
+            <Nav.Link href="/eventcreateform" >New Event</Nav.Link>
             </Nav.Item>
-              
+              <Nav.Item as="li" className="logout">
+                <Nav.Link href="/logout" onClick={this.logoutHandler} >Logout</Nav.Link>
+              </Nav.Item>
               </Nav>
             ):
             (
