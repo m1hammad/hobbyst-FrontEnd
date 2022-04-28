@@ -43,3 +43,6 @@ If you want to create an event, click the 'Create Event' in the Nav bar. On this
 
 For 'Precise location' and 'General Location'. General location is a landmark near the event that people will know approximately where your event is. And 'Precise location is the exact location. So if your event is super popular, it only shows the exact location to those who have RSVP'd yes. So then you don't have people crashing your event. You can make them both the same if you don't care about stragglers joining (all up to you) 
 ![Picture](google.com)
+
+### Icebox Items:
+- 
