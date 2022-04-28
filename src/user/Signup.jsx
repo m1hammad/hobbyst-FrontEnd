@@ -89,6 +89,12 @@ export default function Signup(props) {
             </Form.Group>
 
 
+            <Form.Group>
+                <Form.Label>Hobbies:</Form.Label> <br/>
+                    {hobbyArr}
+            </Form.Group>
+           
+
             <Button variant='primary' onClick={registerHandler}>Register</Button>
 
         </Container>
