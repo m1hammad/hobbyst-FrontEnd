@@ -31,11 +31,12 @@ export default function Signup(props) {
     }
 
     const registerHandler = async() => {
-        props.register(user)
+        await props.register(user)
         console.log("hobby state", {hobbyState})
         console.log("user", user)
-        await Axios.post(`/hobbyUser/${user.emailAddress}`,hobbyState)
-        navigate('/')
+        console.log("email"+user.emailAddress+".")
+        setTimeout(async() =>{ await Axios.post(`/hobbyUser/${user.emailAddress}`,hobbyState); navigate('/')}, 500)
+        
     }
 
     console.log("This is my response",user)
