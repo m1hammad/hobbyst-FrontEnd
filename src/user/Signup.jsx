@@ -5,6 +5,8 @@ import Select from 'react-select'
 // import {Multiselect} from 'multiselect-react-dropdown'
 import Axios from 'axios' 
 import NavbarCollapse from 'react-bootstrap/esm/NavbarCollapse';
+import '../App.css';
+
 
 export default function Signup(props) {
 
@@ -46,7 +48,7 @@ export default function Signup(props) {
     // pases the hobby id to the selecthobby function, and it adds it to the hobi list
     // and the setHobby statelist
     const hobbyArr = props.hobbies.map((hobby, index) => (
-        <Button name='hobby' type='button'  key={index} onClick={selectHobby} value={hobby._id} multiple >{hobby.name}</Button> 
+        <Button variant="outline-primary" name='hobby' type='button' className='hobby-btn' key={index} onClick={selectHobby} value={hobby._id} style={{fontSize:'75%'}} multiple >{hobby.name}</Button> 
         )
         )
 

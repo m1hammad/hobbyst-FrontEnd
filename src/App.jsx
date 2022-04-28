@@ -12,6 +12,10 @@ import Profile from './Profile/ProfileDetail'
 import ProfileEdit from './Profile/ProfileEdit'
 import ProfileDelete from './Profile/ProfileDelete'
 import EventCreateForm from './event/EventCreateForm' 
+import EventDetail from './event/EventDetail'
+import EventEditForm from './event/EventEditForm'
+import EventItem from './event/EventItem'
+import EventList from './event/EventList'
 import HobbyDetail from './hobby/HobbyDetail'
 
 
@@ -230,8 +234,10 @@ export default class App extends Component {
               <Route path='/profile/delete/:id' element={isAuth ? <ProfileDelete user={this.state.user.user||1 }/> : <HomeLoggedOut />} ></Route>
 
               <Route path='/eventcreateform' element={isAuth ? <EventCreateForm hobbies={this.state.hobbies} user={this.state.user.user} eventy={this.createEventHandler} /> : <HomeLoggedOut />}></Route>
-  
-
+              <Route path='/eventdetail' element={isAuth ? <EventCreateForm hobbies={this.state.hobbies} user={this.state.user.user} eventy={this.createEventHandler} /> : <HomeLoggedOut />}></Route>
+              {/* import EventEditForm from './event/EventEditForm'
+              import EventItem from './event/EventItem'
+              import EventList from './event/EventList' */}
 
 
               {/* <Route path='/eventcreateform' element={<HobbyList hobbies={this.state.hobbies} />}> </Route>   */}
