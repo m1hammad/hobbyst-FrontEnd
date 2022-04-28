@@ -3,6 +3,7 @@ import React, { useState, useEffect,Form} from 'react'
 import {Container, Button, Row, Col, } from "react-bootstrap"
 import { useNavigate } from "react-router";
 import './Profile.css';
+import {useParams} from "react-router-dom" 
 
 import Select from 'react-select'
 
@@ -15,14 +16,16 @@ export default function ProfileEdit(props){
     // const [hobbyState, setHobby] = useState([])
 
     const navigate = useNavigate();
+    const params = useParams(); 
+    console.log(params.id,'params.id')  
 
-    console.log(props)
+    // console.log(props,'props')
 
     useEffect(()=>{
         // console.log('useEffected')
         console.log(props.user.id)
         if(props.user.id){   
-            Axios.get(`/api/auth/user/${props.user.id}`)
+            Axios.get(`/api/auth/user/${params.id}`)
             .then(response=>{
                 setProfile(response.data)
                 console.log(response.data)
@@ -43,18 +46,20 @@ export default function ProfileEdit(props){
     //     setUser(temp)
     // }
    
-    // const registerHandler = async() => {
-    //     props.register(user)
-    //     console.log("hobby state", {hobbyState})
-    //     console.log("user", user)
-    //     await Axios.post(`/hobbyUser/${user.emailAddress}`,hobbyState)
-    //     navigate('/')
-    // }
+    const editHandler = async() => {
+        // props.register(user)
+        // console.log("hobby state", {hobbyState})
+        // console.log("user", user)
+        await Axios.post(`/profile/edit/${props.user.id}`)
+        navigate('/profile')
+    }
 
     return(
 
         <div>
         <h1>Edit your profile</h1>
+        <Button variant='primary' href={`/profile/delete/${props.user.id}`}>Delete profile</Button>
+
         {/* <Container>
             <Form.Group>
                 <Form.Label>First Name</Form.Label>
@@ -93,7 +98,7 @@ export default function ProfileEdit(props){
             </Form.Group> 
            
 
-            <Button variant='primary' onClick={registerHandler} >Save Changes</Button>
+            <Button variant='primary' onClick={editHandler} >Save Changes</Button>
 
         </Container> */}
       </div>
