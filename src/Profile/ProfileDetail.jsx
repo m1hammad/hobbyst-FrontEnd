@@ -62,7 +62,7 @@ export default function Profile (props)  {
                             <div style={{ display: "block" ,justifyContent:'space-around', margin:'20px'}} >
                                 <div>
                                     <h5  style={{ display:'inline-block', margin:'10px'}}>about me</h5>
-                                    <Button  href={`profile/edit`}>Edit</Button>
+                                    <Button  href={`profile/edit/${props.user.id}`}>Edit</Button>
                                     <div style={{border:'2px solid gray', padding:'10px', borderRadius:'5px'}}>
                                         <p>{profileState.about}</p>
                                     </div>

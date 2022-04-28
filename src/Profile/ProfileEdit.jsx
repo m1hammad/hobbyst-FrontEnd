@@ -9,21 +9,23 @@ import Select from 'react-select'
 
 export default function ProfileEdit(props){
 
-    const [user, setUser] = useState(null);
+    // const [user, setUser] = useState(null);
     const [profileState, setProfile] = useState(null)
 
-    const [hobbyState, setHobby] = useState([])
+    // const [hobbyState, setHobby] = useState([])
 
     const navigate = useNavigate();
+
+    console.log(props)
 
     useEffect(()=>{
         // console.log('useEffected')
         console.log(props.user.id)
         if(props.user.id){   
-            Axios.get(`profile/?id=${props.user.id}`)
+            Axios.get(`/api/auth/user/${props.user.id}`)
             .then(response=>{
                 setProfile(response.data)
-                console.log(response)
+                console.log(response.data)
             })
             .catch(error=>{
                 console.log(error)
@@ -31,14 +33,23 @@ export default function ProfileEdit(props){
         }
     },[props.user.id])
 
-    const changeHandler = (e) => {
-        let temp = {...user}
-        temp[e.target.name] = e.target.value
-        temp.hobby = hobbyState
-        console.log("this is temp", temp)
-        setUser(temp)
-    }
+    console.log(props.user.id)
+
+    // const changeHandler = (e) => {
+    //     let temp = {...user}
+    //     temp[e.target.name] = e.target.value
+    //     temp.hobby = hobbyState
+    //     console.log("this is temp", temp)
+    //     setUser(temp)
+    // }
    
+    // const registerHandler = async() => {
+    //     props.register(user)
+    //     console.log("hobby state", {hobbyState})
+    //     console.log("user", user)
+    //     await Axios.post(`/hobbyUser/${user.emailAddress}`,hobbyState)
+    //     navigate('/')
+    // }
 
     return(
 
@@ -82,7 +93,7 @@ export default function ProfileEdit(props){
             </Form.Group> 
            
 
-            <Button variant='primary' >Register</Button>
+            <Button variant='primary' onClick={registerHandler} >Save Changes</Button>
 
         </Container> */}
       </div>
