@@ -235,6 +235,7 @@ export default class App extends Component {
 
               <Route path='/eventcreateform' element={isAuth ? <EventCreateForm hobbies={this.state.hobbies} user={this.state.user.user} eventy={this.createEventHandler} /> : <HomeLoggedOut />}></Route>
               <Route path='/eventdetail' element={isAuth ? <EventCreateForm hobbies={this.state.hobbies} user={this.state.user.user} eventy={this.createEventHandler} /> : <HomeLoggedOut />}></Route>
+              <Route path='/event/edit/:_id' element={isAuth ? <EventEditForm hobbies={this.state.hobbies} user={this.state.user.user} event={this.state.event} /> : <HomeLoggedOut />}></Route>
               {/* import EventEditForm from './event/EventEditForm'
               import EventItem from './event/EventItem'
               import EventList from './event/EventList' */}
