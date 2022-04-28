@@ -12,24 +12,15 @@ export default function Profile  (props)  {
     const [profileState, setProfile] = useState(null)
     const [userId, setuserId] = useState(null)
 
-
-    // console.log(props.user.id)
-    // useEffect( () => {
-    //     // await Axios.post(`/profile?id=${props.user.id}`)
-    //    setProfile(props.user.id)
-    //    console.log(userId, 'this is console loggins test')
-    // }, [])
-
-    // useEffect( async() => {
-    //    await setuserId(props.user.id)
-    //    console.log(userId, 'this is console loggins test')
-    // }, [])
+    //Need to get line 21 to accept props.user.id
+    
 
     useEffect(()=>{
-        console.log('useEffected')
-        // if(userId!=1 && != null){
-            // Axios.get(`profile/?id=${props.user.id}`)
-            Axios.get(`profile/?id=6265d63cb7509d94d352360f`)
+        // console.log('useEffected')
+        console.log(props.user.id)
+        if(props.user.id){   
+            Axios.get(`profile/?id=${props.user.id}`)
+            // Axios.get(`profile/?id=626922754021f5fd2e27997b`)
             .then(response=>{
                 setProfile(response.data)
                 console.log(response)
@@ -37,8 +28,16 @@ export default function Profile  (props)  {
             .catch(error=>{
                 console.log(error)
             })
-        // }
-    },[])
+        }
+    },[props.user.id])
+    
+    // useEffect(()=>{
+    //     console.log('useEffect2',profileState)
+    //     profileState.hobby.forEach(hobby => {
+    //         Axios.get(`/hobbydetail/:id`)
+    //         .then()
+    //     });
+    // })
 
     // console.log(profileState)
     
@@ -47,8 +46,8 @@ export default function Profile  (props)  {
 
 
     // console.log(props.user)
-
-
+    // console.log(profileState.image)
+    console.log(props.user.id)
 
 
 
@@ -61,7 +60,7 @@ export default function Profile  (props)  {
             <div>
                 <Container fluid>
                     <Row>
-                        <Col sm='auto'>
+                        <Col md='auto'>
                         <div style={{
                             display: "flex",
                             justifyContent:'space-around',
@@ -75,7 +74,6 @@ export default function Profile  (props)  {
                             <div style={{textAlign: 'center', display:'flex', justifyContent:'center', flexDirection:'column' }}>
                                 <h4>{profileState.firstName} {profileState.lastName}</h4>
                                 <h5>{profileState.city} {profileState.province}</h5>
-                                <h5>hogwarts school of witchcraft and wizardry</h5>
                             </div>
                         </div>
 
@@ -91,10 +89,12 @@ export default function Profile  (props)  {
                                     <h5 style={{  margin:'20px'}}>Hobbies</h5>
                                     <Row>
                                         <Col>
-                                            <ul style={{display:''}}>
-                                                <li>thing</li>
-                                                <li>other thing</li>
-                                                <li>another one</li>
+                                            <ul style={{  listStyleType: 'none'}}>
+                                               {
+                                                    profileState.hobby.map(function(hobby){
+                                                    return <li key={hobby.id} class='btn btn-primary' style={{}}><a  href={`hobbydetail/${hobby.id}`}>{hobby.name}</a></li>
+                                                    })
+                                                }
                                             </ul>
                                         </Col>
                                     </Row>
@@ -104,28 +104,57 @@ export default function Profile  (props)  {
 
                         <Col md>
                         <h1>Events!</h1>
-                        <div style={{ display: "block", margin:'2vh auto',maxHeight:'20vh', maxWidth:'50vw',minWidth:'25vw'}} >
-                            <div style={{height:'100%', width:'100%', border:'1px solid gray', margin:'0 auto',border:'2px solid gray'}}>
-                            Kill snake man
-                                <Image fluid style={{objectFit:'cover', padding:0 }}  src='https://imgs.search.brave.com/m1NcZ4LFZIcTN6zGwTI6fnMXVAAO2WjYrDDDyF2Bcb0/rs:fit:1200:1200:1/g:ce/aHR0cHM6Ly9zdGF0/aWMzLnNyY2RuLmNv/bS93b3JkcHJlc3Mv/d3AtY29udGVudC91/cGxvYWRzLzIwMTcv/MDIvZGFuaWVsLXJh/ZGNsaWZmZS13b3Vs/ZC10aGluay1hYm91/dC1oYXJyeS1wb3R0/ZXItcmV0dXJuLmpw/Zw'/>
-                                <div>
-                                    Location here:~~~~~~ this is a place~~~~~~
-                                    <iframe 
-                                        // src = {stringy}
-                                        src= {`https://maps.google.com/maps?q=${address}=&output=embed`}
-                                        width="600"
-                                        height="250"
-                                        frameBorder="0"
-                                        scrolling="no"
-                                        marginHeight="0"
-                                        marginWidth="0"
-                                        >
-                                    </iframe>
+                        <ul style={{  listStyleType: 'none'}}>
+                            {
+                                profileState.events.map(function(event,index){
+                                    return (
+                                        <div key={index} style={{ display: "block", margin:'2vh auto',maxHeight:'20vh', maxWidth:'50vw',minWidth:'25vw'}} >
+                                            <div style={{height:'100%', width:'100%', border:'1px solid gray', margin:'0 auto',border:'2px solid gray'}}>
+                                                {event}
+                                                <Image fluid style={{objectFit:'cover', padding:0 }}  src='https://imgs.search.brave.com/m1NcZ4LFZIcTN6zGwTI6fnMXVAAO2WjYrDDDyF2Bcb0/rs:fit:1200:1200:1/g:ce/aHR0cHM6Ly9zdGF0/aWMzLnNyY2RuLmNv/bS93b3JkcHJlc3Mv/d3AtY29udGVudC91/cGxvYWRzLzIwMTcv/MDIvZGFuaWVsLXJh/ZGNsaWZmZS13b3Vs/ZC10aGluay1hYm91/dC1oYXJyeS1wb3R0/ZXItcmV0dXJuLmpw/Zw'/>
+                                                <div>
+                                                    Location here:~~~~~~ this is a place~~~~~~
+                                                    <iframe 
+                                                        title={`${address}map`}
+                                                        src= {`https://maps.google.com/maps?q=${address}=&output=embed`}
+                                                        width="600"
+                                                        height="250"
+                                                        frameBorder="0"
+                                                        scrolling="no"
+                                                        marginHeight="0"
+                                                        marginWidth="0"
+                                                        >
+                                                    </iframe>
+                                                </div>
+                                                <Button>attend the thing</Button>
+                                            </div>
+                                         </div>
+                                    )
+                                })
+                            }
+                        </ul>
+                            {/* <div style={{ display: "block", margin:'2vh auto',maxHeight:'20vh', maxWidth:'50vw',minWidth:'25vw'}} >
+                                <div style={{height:'100%', width:'100%', border:'1px solid gray', margin:'0 auto',border:'2px solid gray'}}>
+                                Kill snake man
+                                    <Image fluid style={{objectFit:'cover', padding:0 }}  src='https://imgs.search.brave.com/m1NcZ4LFZIcTN6zGwTI6fnMXVAAO2WjYrDDDyF2Bcb0/rs:fit:1200:1200:1/g:ce/aHR0cHM6Ly9zdGF0/aWMzLnNyY2RuLmNv/bS93b3JkcHJlc3Mv/d3AtY29udGVudC91/cGxvYWRzLzIwMTcv/MDIvZGFuaWVsLXJh/ZGNsaWZmZS13b3Vs/ZC10aGluay1hYm91/dC1oYXJyeS1wb3R0/ZXItcmV0dXJuLmpw/Zw'/>
+                                    <div>
+                                        Location here:~~~~~~ this is a place~~~~~~
+                                        <iframe 
+                                            // src = {stringy}
+                                            src= {`https://maps.google.com/maps?q=${address}=&output=embed`}
+                                            width="600"
+                                            height="250"
+                                            frameBorder="0"
+                                            scrolling="no"
+                                            marginHeight="0"
+                                            marginWidth="0"
+                                            >
+                                        </iframe>
+                                    </div>
+                                    <Button>attend the thing</Button>
                                 </div>
-                                <Button>attend the thing</Button>
-                            </div>
-                            
-                        </div>
+                                
+                            </div> */}
                         </Col>
                     </Row>
                 </Container>
