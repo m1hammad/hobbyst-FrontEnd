@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react' 
 // import EventCreateForm from '../event/EventCreateForm'
-// import EventList from "../event/EventList" 
+// import EventList from "../event/EventList"  
+import {Button} from "react-bootstrap"
 import {useParams} from "react-router-dom" 
 import Axios from "axios" 
 import EventItem from "../event/EventItem"
@@ -43,10 +44,11 @@ export default function Hobby(props) {
           </div>
 
           <div> 
-            <button className="createNewBtn"> <a href="/eventcreateform"> 
+          <Button variant="outline-light" className='createNewBtn' href={`/eventcreateform`}>Create New</Button>
+            {/* <button className="createNewBtn"> <a href="/eventcreateform"> 
             <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
           <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
-          Create New</a> </button>
+          Create New</a> </button> */}
           </div>
 
         </div>
