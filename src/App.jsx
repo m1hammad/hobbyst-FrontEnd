@@ -8,7 +8,8 @@ import Axios from "axios"
 import jwt_decode from "jwt-decode"
 import { Alert, Nav, NavItem } from "react-bootstrap" 
 import HobbyList from './hobby/HobbyList'
-import Profile from './user/Profile'
+import Profile from './Profile/ProfileDetail'
+import ProfileEdit from './Profile/ProfileEdit'
 import EventCreateForm from './event/EventCreateForm' 
 import HobbyDetail from './hobby/HobbyDetail'
 
@@ -224,6 +225,7 @@ export default class App extends Component {
              
 
               <Route path='/profile' element={isAuth ? <Profile user={this.state.user.user||1 }/> : <HomeLoggedOut />} ></Route>
+              <Route path='/profile/edit' element={isAuth ? <ProfileEdit user={this.state.user.user||1 }/> : <HomeLoggedOut />} ></Route>
               <Route path='/eventcreateform' element={isAuth ? <EventCreateForm hobbies={this.state.hobbies} user={this.state.user.user} eventy={this.createEventHandler} /> : <HomeLoggedOut />}></Route>
   
 
