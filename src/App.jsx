@@ -70,6 +70,7 @@ export default class App extends Component {
 
 
   registerHandler = async(user) => {
+    console.log(user,'this is the user in app.jsx')
     Axios.post("auth/signup", user)
     .then(response =>{
       console.log('Signup response',response.data.token)
@@ -95,6 +96,7 @@ export default class App extends Component {
   }
 
   loginHandler = (cred) => {
+    console.log(cred,'this is cred')
     Axios.post("auth/signin", cred)
     .then(response => {
       console.log("logged in",response.data.token)

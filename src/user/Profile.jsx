@@ -92,7 +92,7 @@ export default function Profile  (props)  {
                                             <ul style={{  listStyleType: 'none'}}>
                                                {
                                                     profileState.hobby.map(function(hobby){
-                                                    return <li key={hobby.id}> {hobby.name} is my hobby </li>
+                                                    return <li key={hobby.id} class='btn btn-primary' style={{}}><a  href={`hobbydetail/${hobby.id}`}>{hobby.name}</a></li>
                                                     })
                                                 }
                                             </ul>
@@ -115,7 +115,7 @@ export default function Profile  (props)  {
                                                 <div>
                                                     Location here:~~~~~~ this is a place~~~~~~
                                                     <iframe 
-                                                        // src = {stringy}
+                                                        title={`${address}map`}
                                                         src= {`https://maps.google.com/maps?q=${address}=&output=embed`}
                                                         width="600"
                                                         height="250"
