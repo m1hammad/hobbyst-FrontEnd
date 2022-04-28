@@ -28,8 +28,6 @@ export default function Hobby(props) {
     console.log(hobby.events)
   }
 
-
-
     return (
       <>
       {hobby&& 
@@ -38,11 +36,10 @@ export default function Hobby(props) {
             <h1 className='title'>{hobby.name}</h1>  
             <img className="hobbyDetailImg" src={hobby.photo}></img> 
           </div>
-            <h1 className='title'>Events</h1>  
-            
-            <p>  
-              {hobby.events.map((event, index) => ( <div className="eventItems" key={index}> <EventItem event={event} key={index}/> </div>))}
-            </p>
+            <h1>Events</h1>  
+            <ul>
+               {hobby.events.map((event, index) => ( <a href={`/eventdetail/${event._id}`}> <div className="eventItems" key={index}> <EventItem event={event} key={index}/> </div> </a> ))}
+              </ul>
             {/* <EventList></EventList> */}
             <button> <a href="/eventcreateform"> Create New Event </a> </button>
             {/* <EventCreateForm></EventCreateForm> */}

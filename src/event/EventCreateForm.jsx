@@ -73,7 +73,7 @@ export default function EventCreateForm(props){
     // pases the hobby id to the selecthobby function, and it adds it to the hobi list
     // and the setHobby statelist
     const hobbyArr = props.hobbies.map((hobby, index) => (
-        <Button name='hobby' type='button'  key={index} onClick={selectHobby} value={hobby._id} multiple >{hobby.name}</Button> 
+        <Button name='hobby' type='button' className='hobbyBtns' key={index} onClick={selectHobby} value={hobby._id} multiple >{hobby.name}</Button> 
         )
         )
 
@@ -110,7 +110,7 @@ export default function EventCreateForm(props){
               <Form.Control name="generalLocation" onChange={changeHandler}></Form.Control>
           </Form.Group>
           <Form.Group>
-              <Form.Label>Precice Location</Form.Label>
+              <Form.Label>Precise Location</Form.Label>
               <Form.Control name="preciseLocation" onChange={changeHandler}></Form.Control> 
            </Form.Group> 
 
@@ -126,8 +126,12 @@ export default function EventCreateForm(props){
                 {/* </Form.Select> */}
             </Form.Group>
 
+                    <br></br>
               
-        <Button variant='primary' onClick={createEventHandler}>Create</Button>
+        <Button variant='primary' className="createBtn" onClick={createEventHandler}> 
+          <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
+          <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
+        Create</Button>
 
       </Container>
       </div>

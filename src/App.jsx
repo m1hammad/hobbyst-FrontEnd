@@ -174,7 +174,7 @@ export default class App extends Component {
               <Nav  as="ul" className="justify-content-center nav">
               
               <Nav.Item as="li">
-                <Nav.Link href="/" className='text-white'>Home</Nav.Link>
+                <Nav.Link href="/" className='text-white' id="home" >Home</Nav.Link>
               </Nav.Item>
               <Nav.Item as="li">
                 <Nav.Link href='/profile' className='text-white'>{this.state.user ? this.state.user.user.name : null}</Nav.Link>
@@ -215,7 +215,9 @@ export default class App extends Component {
 
               <Route path='/hobbylist' element={isAuth ? <HobbyList hobbies={this.state.hobbies} /> : <HomeLoggedOut />}> </Route> 
 
+
               <Route path='/hobbydetail/:id' element={isAuth ? <HobbyDetail user={this.state.user.user} hobbies={this.state.hobbies} /> : <HomeLoggedOut />}> </Route> 
+
 
               {/* {this.state.hobbies.map(hobby => <Route path="/hobby/:_id" element={<HobbyDetail />} /> ) }  */}
              
