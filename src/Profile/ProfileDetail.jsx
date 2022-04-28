@@ -62,7 +62,7 @@ export default function Profile (props)  {
                                 <div style={{ display: "block" ,justifyContent:'space-around', margin:'20px'}} >
                                     <div>
                                         <h5  style={{ display:'inline-block', margin:'10px'}}>about me</h5>
-                                        <Button  href={`profile/edit/${props.user.id}`}>Edit</Button>
+                                        <Button variant="outline-light" className='hobby-btn' href={`profile/edit/${props.user.id}`}>Edit</Button>
                                         <div style={{border:'2px solid gray', padding:'10px', borderRadius:'5px'}}>
                                             <p>{profileState.about}</p>
                                         </div>
@@ -76,7 +76,7 @@ export default function Profile (props)  {
                                                 {
                                                         profileState.hobby.map(function(hobby,index){
                                                             
-                                                        return <Button key={index} variant="outline-primary" href={`hobbydetail/${hobby._id}`} className='hobby-btn'> {hobby.name} </Button> 
+                                                        return <Button key={index} variant="outline-light" href={`hobbydetail/${hobby._id}`} className='hobby-btn'> {hobby.name} </Button> 
                                                         // <Button type="submit">Button</Button>{' '}
                                                         
                                                         // <li key={index} className='btn hobby-btn' style={{}}><a  href={`hobbydetail/${hobby._id}`}>{hobby.name}</a></li>
@@ -90,7 +90,7 @@ export default function Profile (props)  {
                             </Col>
 
                             <Col sm style={{justifyContent:'center',textAlign:'center'}}>
-                            <h1 className="eventsHeading">My Events</h1>
+                            <h1 id="eventsHeading" >My Events</h1>
                             <ul style={{  listStyleType: 'none', margin:'0 auto',padding:'0'}}>
                                 {
                                     profileState.events.map(function(event,index){
