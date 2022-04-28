@@ -7,16 +7,24 @@ import { useNavigate } from "react-router";
 import './Profile.css';
 
 
+
+
 export default function ProfileDelete(props){
 
     const params = useParams(); 
     console.log(params.id)  
     // console.log({URLSearchParams})
 
+    let navigate = useNavigate()
+
     const deleteHandler = async() => {
         // console.log("user", user)
         await Axios.delete(`/profile/delete/${params.id}`)
+        navigate('/')
+        await props.logout()
+        
     }
+
     
     return(
         <div>
