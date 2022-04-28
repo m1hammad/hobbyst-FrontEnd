@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import AuthorList from './author/AuthorList'
 import Signup from './user/Signup'
 import Signin from './user/Signin'
 import HomeLoggedIn from './landingPage/HomeLoggedIn'
