@@ -36,7 +36,7 @@ export default function ProfileEdit(props){
             })
         }
     },[props.user.id])
-    console.log('profile is',profileState)
+    console.log('profile is',params.id)
     const selectHobby = (e) => {
         let hobi = hobbyState
         if(hobi.indexOf(e.target.value) < 0){
@@ -45,6 +45,8 @@ export default function ProfileEdit(props){
         setHobby(hobi)
         }
     }
+
+    console.log("hobby lsit", hobbyState)
 
     console.log(props.user.id)
 
@@ -55,12 +57,15 @@ export default function ProfileEdit(props){
         console.log("this is temp", temp)
         setUser(temp)
     }
+
+    console.log('this is userrrr', user)
    
     const editHandler = async() => {
         // props.register(user)
         // console.log("hobby state", {hobbyState})
         // console.log("user", user)
-        await Axios.put(`/profile/edit/${props.user.id}`)
+        console.log(`/profile/edit/${props.user.id}`)
+        await Axios.put(`/profile/edit/${props.user.id}`,user)
         navigate('/profile')
     }
     const hobbyArr = props.hobbies.map((hobby, index) => (
