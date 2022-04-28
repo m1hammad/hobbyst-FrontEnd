@@ -116,9 +116,9 @@ export default function ProfileEdit(props){
             </Form.Group> 
            
 
-            <Button variant='primary' onClick={editHandler} >Save Changes</Button>
+             <Button variant='primary' onClick={editHandler} >Save Changes</Button>
 
-        </Container>
-      </div>
-    )
-}
+         </Container>
+       </div>
+     )
+ }
