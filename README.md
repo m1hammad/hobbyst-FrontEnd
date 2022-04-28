@@ -3,10 +3,10 @@
 ## Add your hobbies, and find events related to those hobbies! Make your own event and watch the new collections trickle in. 
 
 <hr>
-##Below you will find screenshots with functionality, a little about the team, the technologies used. 
+## Below you will find screenshots with functionality, a little about the team, the technologies used. 
 <hr>
 
-###Technologies Used: MERN STACK (MongoDB/Mongoose, Express, React, Node) with full CRUD functionality.
+### Technologies Used: MERN STACK (MongoDB/Mongoose, Express, React, Node) with full CRUD functionality.
 
 <hr>
 ### Lila: the person writing this README is super cool. She loves hiking, trying new things, being outside and reading books to expand her EQ. Since Corona started, and since graduating university, she's found it very hard to make friends. That was why she found this project very interesting and personal.
