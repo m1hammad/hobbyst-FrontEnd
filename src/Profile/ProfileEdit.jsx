@@ -12,8 +12,9 @@ export default function ProfileEdit(props){
 
     // const [user, setUser] = useState(null);
     const [profileState, setProfile] = useState(null)
+    const [user, setUser] = useState(null);
 
-    // const [hobbyState, setHobby] = useState([])
+    const [hobbyState, setHobby] = useState([])
 
     const navigate = useNavigate();
     const params = useParams(); 
@@ -36,6 +37,15 @@ export default function ProfileEdit(props){
         }
     },[props.user.id])
 
+    const selectHobby = (e) => {
+        let hobi = hobbyState
+        if(hobi.indexOf(e.target.value) < 0){
+        hobi.push(e.target.value)
+        console.log(hobi)
+        setHobby(hobi)
+        }
+    }
+
     console.log(props.user.id)
 
     const changeHandler = (e) => {
@@ -50,7 +60,7 @@ export default function ProfileEdit(props){
         // props.register(user)
         // console.log("hobby state", {hobbyState})
         // console.log("user", user)
-        await Axios.post(`/profile/edit/${props.user.id}`)
+        await Axios.put(`/profile/edit/${props.user.id}`)
         navigate('/profile')
     }
     const hobbyArr = props.hobbies.map((hobby, index) => (
@@ -62,12 +72,12 @@ export default function ProfileEdit(props){
 
         <div>
         <h1>Edit your profile</h1>
-        <Button variant='primary' href={`/profile/delete/${props.user.id}`}>Delete profile</Button>
+        <Button variant='danger' href={`/profile/delete/${props.user.id}`}>Delete profile</Button>
 
         <Container>
             <Form.Group>
                 <Form.Label>First Name</Form.Label>
-                <Form.Control name="firstName" onChange={changeHandler}></Form.Control>
+                <Form.Control name="firstName" onChange={changeHandler} ></Form.Control>
             </Form.Group>
 
             <Form.Group>
@@ -90,10 +100,14 @@ export default function ProfileEdit(props){
                 <Form.Control name="province" onChange={changeHandler}></Form.Control>
             </Form.Group>
                 
-            
             <Form.Group>
                 <Form.Label>About</Form.Label>
                 <Form.Control name="about" onChange={changeHandler}></Form.Control>
+            </Form.Group>
+
+            <Form.Group>
+                <Form.Label>Profile Picture Url</Form.Label>
+                <Form.Control name="image" onChange={changeHandler}></Form.Control>
             </Form.Group>
 
              <Form.Group>

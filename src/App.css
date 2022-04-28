@@ -37,3 +37,17 @@
   }
 }
 
+/* button for hobby */
+.hobby-btn {
+  margin:5px;
+}
+.hobby-btn:hover {
+  /* background-color: ; */
+  position:relative;
+  /* top:-3px; */
+}
+.hobby-btn:active {
+  position:relative;
+  top:-3px;
+}
+
