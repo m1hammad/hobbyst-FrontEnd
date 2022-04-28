@@ -27,17 +27,19 @@ export default class App extends Component {
     user: [],
     message: null,
     hobbies: [], 
-    event:[]
+    event:[],
+    userhobbies: []
   }
 
   componentDidMount(){
     let token = localStorage.getItem("token")
 
-    Axios.get('/hobbyindex')
+    Axios.get(`/hobbyindex`)
     .then(response => {
-      // console.log(response.data.hobbiesList)
+      console.log("listt", response.data)
       // console.log("myhobbies",hobbies)
       this.setState({
+        // hobbies: response.data.userhobbies.slice(),
         hobbies: response.data.hobbiesList.slice()
       })
 
@@ -157,6 +159,7 @@ export default class App extends Component {
   })
 }
 
+
   // ProfileHandler = (user)=>{
   //   // Axios.get('/profile',user)
   //   // .then(response=>{
@@ -168,6 +171,7 @@ export default class App extends Component {
   // }
 
   render() {
+    console.log("user:",this.state.user)
     // console.log("Main app",this.state.hobbies)
     const message = this.state.message ? (
       <Alert variant='danger'>{this.state.message}</Alert>
@@ -220,6 +224,7 @@ export default class App extends Component {
               <Route path='/signin' element={<Signin login={this.loginHandler} />}></Route>
 
               <Route path='/hobbylist' element={isAuth ? <HobbyList hobbies={this.state.hobbies} /> : <HomeLoggedOut />}> </Route> 
+              <Route path='/hobbylist/:userid' element={isAuth ? <HobbyList hobbys={this.state.userhobbies} /> : <HomeLoggedOut />}> </Route> 
 
 
               <Route path='/hobbydetail/:id' element={isAuth ? <HobbyDetail user={this.state.user.user} hobbies={this.state.hobbies} /> : <HomeLoggedOut />}> </Route> 
