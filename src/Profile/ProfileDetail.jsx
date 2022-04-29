@@ -56,13 +56,13 @@ export default function Profile (props)  {
                                 <div style={{textAlign: 'center', display:'flex', justifyContent:'center', flexDirection:'column' }}>
                                     <h4>{profileState.firstName} {profileState.lastName}</h4>
                                     <h5>{profileState.city} {profileState.province}</h5>
+                                    <Button variant="outline-light" className='hobby-btn' href={`profile/edit/${props.user.id}`}>Edit Profile </Button>
                                 </div>
                             </div>
 
                                 <div style={{ display: "block" ,justifyContent:'space-around', margin:'20px'}} >
                                     <div>
                                         <h5  style={{ display:'inline-block', margin:'10px'}}>about me</h5>
-                                        <Button variant="outline-light" className='hobby-btn' href={`profile/edit/${props.user.id}`}>Edit</Button>
                                         <div style={{border:'2px solid gray', padding:'10px', borderRadius:'5px'}}>
                                             <p>{profileState.about}</p>
                                         </div>
