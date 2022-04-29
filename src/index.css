@@ -1,7 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Fugaz+One&family=Jua&family=Monoton&family=Syncopate:wght@700&family=Ubuntu&display=swap');
-/* @tailwind base;
-@tailwind components;
-@tailwind utilities; */
 
 body {
   margin: 0;
@@ -11,9 +8,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; 
   background-color: rgb(44,44,44); 
-  /* background-image: url("https://cdn.wallpapersafari.com/88/27/HbqO2J.jpg");  */ 
-  /* background-image: url("https://img.wallpapersafari.com/desktop/1680/1050/64/40/wxHj7Z.png");  */
-  /* background-image: url("https://img.wallpapersafari.com/desktop/1536/864/13/31/YdpIHu.jpg"); */
   background-repeat: no-repeat;
   background-size: cover; 
   z-index: -1;  
@@ -29,17 +23,15 @@ code {
   font-family: 'Fredoka One', cursive;
   text-align: center;
   color: rgb(255, 255, 255);
-  font-size: 200px;
-  text-shadow: -1px 1px 0 #000,
-        4px 4px 0 #000,
-        1px -1px 0 #000,
-        -1px -1px 0 #000;
+  font-size: 200px; 
+} 
+
+.byline{ 
+  text-align: center;
 }
 
 
 .nav{
-/* background: rgb(2,0,36); */
-/* background: linear-gradient(10deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%); */ 
 list-style-type: none;
 margin: 0;
 padding: 0;
@@ -90,6 +82,11 @@ background-color: #333;
   z-index: -1;
 } 
 
+.isLoggedInHobbies{  
+  border: 1 px solid white;
+}
+
+
 .hobbyIndexImg{ 
   width: 250px; 
   height: 10em; 
@@ -101,8 +98,6 @@ background-color: #333;
   width :max-content; 
   margin-top: 0.5em; 
   align-items: center;   
-  /* padding:1em;  */
-  /* background-image: linear-gradient(deepskyblue, rgb(21, 84, 105)); */
   border-radius: 4%;
   box-shadow: 1px 2px 10px grey; 
   transform: translateX(120px);
@@ -131,27 +126,16 @@ background-color: #333;
 
 a{ 
   text-decoration: none; 
-  /* color: white; */
 }  
 
 .title { 
-  /* font-family: 'Monoton', cursive; */ 
-  /* font-family: 'Fugaz One', cursive;  */
-  /* font-family: 'Syncopate', sans-serif; */ 
   font-family: 'Fredoka One', cursive;
   font-size: 67px;
   text-align: center;   
   color: #d6ebff;   
   transform: translateY(20px);
-  /* text-shadow: -1px 1px 0 #000,
-  1px 1px 0 yellow,
-  1px 1px 0 rgb(43, 29, 240),
-  1px 1px 0 rgb(43, 29, 240); */
 } 
 
-#username{ 
-  color:blue
-} 
 
 .hobbyTitleCard{ 
   width :min-content; 
@@ -182,9 +166,31 @@ a{
   width: 500px; 
   align-items: center; 
   border-radius: 4%; 
-  /* border: 2px solid yellow; */
   box-shadow: 0px 0.5px 8px 1px rgb(214, 214, 214); 
 }  
+
+.signInBtn{ 
+  background: #1d92ff00;
+  width: 180px;
+  height: 60px;
+  cursor: pointer;
+  border: 1px solid white;
+  outline: none;
+  margin-top: 1em;
+  font-size: 30px; 
+} 
+
+.signInBtn:hover {
+  transition: 0.3s ease-in-out;
+  background-color: white ; 
+  color: rgb(66, 66, 66); 
+  border: 1px solid white;
+}
+
+.signInBtn span {
+  color: white;
+  font-size: 30px;
+}
 
 
 .createBtn{ 
@@ -194,7 +200,6 @@ a{
   cursor: pointer;
   border: 1px solid white;
   outline: none;
-  margin-left: 550px; 
   font-size: 30px; 
 }
 
@@ -211,16 +216,15 @@ a{
 }
 
 .createNewBtn{ 
-  background-color: rgba(80, 77, 77, 0);
+  background-color: rgba(80, 77, 77, 0); 
   width: 180px;
   height: 60px;
   cursor: pointer;
   border: 1px solid white;
   outline: none;
   font-size: 30px; 
-  border-radius: 7%; 
-  margin-top: 1em; 
-  transform: translateX(70px);  
+  border-radius: 7%;  
+  margin-left: 1em; 
   color: white;
 }
 
@@ -232,50 +236,73 @@ a{
 } 
 
 .joinBtn{ 
-  justify-content: center;
+  justify-content: center; 
+  position: absolute; 
+  left: 50px;  
+  font-size: 25px;
+  width: fit-content ;
 }
 
 .hobbyBtns{ 
-  margin: 5px;
+  margin: 5px; 
+}  
+
+.hobby-btn{ 
+  border: 1px solid white; 
+  background: #1d92ff00;  
+  max-width: fit-content;
 } 
 
-/* nav .float-right{ 
-  float: right;
-} */ 
+.hobby-btn:hover {
+  transition: 0.3s ease-in-out;
+  background-color: white ; 
+  color: rgb(27, 27, 27); 
+  border: 1px solid white;
+} 
+
+.deleteBtn{ 
+  margin-left: 25em;
+}
+
 
 .eventsHeading{ 
   color: white; 
   font-family: 'Fredoka One', cursive;
-  margin-top: 1em;
-  /* text-align: center; */ 
-  transform: translateX(60px);
+  margin-left: 1em;
 }
 
 .eventItem{ 
-  border: 1px solid black ;
-  background-color: white;
-  box-shadow: 4px 4px 10px grey; 
-  width:fit-content; 
+  border: 1px solid rgb(204, 233, 233) ;
+  background-color: #333;
   padding: 1em;  
     margin: 1em; 
-    border-radius: 2%; 
-    box-shadow: 0px 0.5px 8px 1px rgb(214, 214, 214);
-    }  
+  color: #d6ebff;
+  }   
 
+  .eventItems :hover{ 
+    color: white; 
+  }
 
   .eventTitle{ 
     text-transform: uppercase;
   }
 
   .eventsInHobbyDetail{ 
-    display: inline-flex;
     align-items: center;  
-    justify-items: center;
+    justify-items: center; 
   }
 
   .eventDetails{ 
-    border: 1px solid white; 
-    width: fit-content;  
+    max-width: 700px; 
     background-color: #333; 
     padding: 10px;
+  } 
+
+  .eventDetailsCube{ 
+    width: 350px; 
+  } 
+
+  .DetailsContainer{  
+    position: relative;
+    left: 31em;  
   }

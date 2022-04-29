@@ -22,7 +22,7 @@ export default function Signin(props) {
   console.log(user)
   return (
     <div>
-      <h1>Sign in</h1>
+      <h1 className="title">Sign in</h1>
       <Container>
           <Form.Group>
               <Form.Label>Email Address</Form.Label>
@@ -34,7 +34,7 @@ export default function Signin(props) {
               <Form.Control name="password" type='password' onChange={changeHandler}></Form.Control>
           </Form.Group>
 
-          <Button variant='primary' onClick={loginHandler}>Sign In</Button>
+          <Button className="signInBtn" variant='primary' onClick={loginHandler}>Sign In</Button>
 
       </Container>
     </div>

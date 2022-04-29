@@ -55,13 +55,13 @@ export default function Profile (props)  {
                                 <div style={{textAlign: 'center', display:'flex', justifyContent:'center', flexDirection:'column' }}>
                                     <h4>{profileState.firstName} {profileState.lastName}</h4>
                                     <h5>{profileState.city} {profileState.province}</h5>
+                                    <Button variant="outline-light" className='hobby-btn' href={`profile/edit/${props.user.id}`}>Edit Profile </Button>
                                 </div>
                             </div>
 
                                 <div style={{ display: "block" ,justifyContent:'space-around', margin:'20px'}} >
                                     <div>
                                         <h5  style={{ display:'inline-block', margin:'10px'}}>about me</h5>
-                                        <Button variant="outline-light" className='hobby-btn' href={`profile/edit/${props.user.id}`}>Edit</Button>
                                         <div style={{border:'2px solid gray', padding:'10px', borderRadius:'5px'}}>
                                             <p>{profileState.about}</p>
                                         </div>
@@ -89,13 +89,14 @@ export default function Profile (props)  {
                             </Col>
 
                             <Col sm style={{justifyContent:'center',textAlign:'center'}}>
-                            <h1 id="eventsHeading" >My Events</h1>
+                            <h1 class="title">My Events</h1>
                             <ul style={{  listStyleType: 'none', margin:'0 auto',padding:'0'}}>
                                 {
                                     profileState.events.map(function(event,index){
                                         return (
 
-                                            <Container fluid style={{textAlign:'center', margin:'2vh auto',padding:'0', backgroundColor:'white',borderRadius:'10px',
+
+                                            <Container fluid style={{textAlign:'center', color:"#333", paddingBottom:"1em", margin:'2vh auto',padding:'0', backgroundColor:'white',borderRadius:'10px',
                                                 boxShadow: '4px 4px 10px black'}} key={index}>
                                                 <h3>{event.title}</h3>
                                                 <Row style={{height:'100%', width:"max-content",maxWidth:'90vw', margin:'0 auto',padding:'0em', justifyContent:'space-between'}}>

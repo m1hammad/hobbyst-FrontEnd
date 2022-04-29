@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './Home.css';
-import Axios from 'axios'
+import Axios from 'axios' 
+import HobbyItem from "../hobby/HobbyItem";
 
 export default function HomeLoggedIn(props) {
   const [hobbies, setHobbies] = useState([])
@@ -23,9 +24,12 @@ export default function HomeLoggedIn(props) {
   return ( 
     <>
     <div>
-      <h1 className="appLogo"> HOBBYST </h1>
-      <h1>Welcome Back, <span id='username'>{props.user.name}</span> </h1>  
-      {/* {hobbies.map()} */}
+      <h1 className="title">Hey, {props.user.name}!</h1>    
+
+      <div className="isLoggedInHobbies"> 
+      <h1 className="eventsHeading">Explore Your Hobbies:</h1>
+      {hobbies.map((hobby, index) => ( <div className="hobbyList"> <HobbyItem hobby={hobby} key={index} /> </div>))}
+      </div>
     </div>
   </>
   )
