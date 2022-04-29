@@ -7,6 +7,7 @@ export default function HomeLoggedOut(props) {
   return (
     <div>
         <div id='loggedout'></div> 
+        <video id='background' />
         <h1 className="appLogo"> HOBBYST </h1> 
         <h4 className="byline"> Connect to your favorite hobbies and meet others who love them too</h4>
     </div>

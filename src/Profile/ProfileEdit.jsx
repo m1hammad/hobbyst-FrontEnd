@@ -118,7 +118,7 @@ export default function ProfileEdit(props){
            
 
              <Button variant='primary' onClick={editHandler} className="signInBtn"> Save </Button> 
-             <Button variant='danger' className="deleteBtn" className="deleteBtn" href={`/profile/delete/${props.user.id}`}>Delete profile</Button>
+             <Button variant='danger' className="deleteBtn" href={`/profile/delete/${props.user.id}`}>Delete profile</Button>
 
          </Container>
        </div>
