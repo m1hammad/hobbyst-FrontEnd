@@ -48,13 +48,13 @@ export default function Signup(props) {
     // pases the hobby id to the selecthobby function, and it adds it to the hobi list
     // and the setHobby statelist
     const hobbyArr = props.hobbies.map((hobby, index) => (
-        <Button variant="outline-primary" name='hobby' type='button' className='hobby-btn' key={index} onClick={selectHobby} value={hobby._id} style={{fontSize:'75%'}} multiple >{hobby.name}</Button> 
+        <Button  name='hobby' type='button' className='hobby-btn' key={index} onClick={selectHobby} value={hobby._id} style={{fontSize:'75%'}} multiple >{hobby.name}</Button> 
         )
         )
 
     return (
       <div>
-        <h1>Sign up</h1>
+        <h1 className="title">Sign up</h1>
         <Container>
             <Form.Group>
                 <Form.Label>First Name</Form.Label>
@@ -98,7 +98,7 @@ export default function Signup(props) {
             </Form.Group>
            
 
-            <Button variant='primary' onClick={registerHandler}>Register</Button>
+            <Button className="signInBtn" variant='primary' onClick={registerHandler}>Register</Button>
 
         </Container>
       </div>

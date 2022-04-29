@@ -27,7 +27,7 @@ export default function HomeLoggedIn(props) {
       <h1 className="title">Hey, {props.user.name}!</h1>    
 
       <div className="isLoggedInHobbies"> 
-      <h1>Hobbies:</h1>
+      <h1 className="eventsHeading">Explore Your Hobbies:</h1>
       {hobbies.map((hobby, index) => ( <div className="hobbyList"> <HobbyItem hobby={hobby} key={index} /> </div>))}
       </div>
     </div>

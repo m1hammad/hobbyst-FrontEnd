@@ -37,14 +37,18 @@ export default function Hobby(props) {
             <h1 className='title'>{hobby.name}</h1>  
             <img className="hobbyDetailImg" src={hobby.photo}></img> 
           </div>
+
+          <div> 
+
             <h1 className="eventsHeading">Events</h1>  
+          <Button variant="outline-light" className='createNewBtn' href={`/eventcreateform`}>Create New</Button>
+          </div>
           
           <div className="eventsInHobbyDetail"> 
                {hobby.events.map((event, index) => ( <a href={`/eventdetail/${event._id}`}> <div className="eventItems" key={index}> <EventItem event={event} key={index}/> </div> </a> ))}
           </div>
 
           <div> 
-          <Button variant="outline-light" className='createNewBtn' href={`/eventcreateform`}>Create New</Button>
             {/* <button className="createNewBtn"> <a href="/eventcreateform"> 
             <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
           <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
