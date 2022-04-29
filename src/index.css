@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fugaz+One&family=Jua&family=Monoton&family=Syncopate:wght@700&family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Fugaz+One&family=Jua&family=Monoton&family=Syncopate:wght@700&family=Ubuntu&display=swap');
 /* @tailwind base;
 @tailwind components;
 @tailwind utilities; */
@@ -26,7 +26,7 @@ code {
 }
 
 .appLogo{ 
-  font-family: 'Syncopate', sans-serif;
+  font-family: 'Fredoka One', cursive;
   text-align: center;
   color: rgb(255, 255, 255);
   font-size: 200px;
@@ -124,7 +124,8 @@ a{
 .title { 
   /* font-family: 'Monoton', cursive; */ 
   /* font-family: 'Fugaz One', cursive;  */
-  font-family: 'Syncopate', sans-serif;
+  /* font-family: 'Syncopate', sans-serif; */ 
+  font-family: 'Fredoka One', cursive;
   font-size: 67px;
   text-align: center;   
   color: #d6ebff;   
@@ -215,6 +216,10 @@ a{
   background-color: white ; 
   color: rgb(27, 27, 27); 
   border: 1px solid white;
+} 
+
+.joinBtn{ 
+  justify-content: center;
 }
 
 .hobbyBtns{ 
@@ -227,7 +232,7 @@ a{
 
 .eventsHeading{ 
   color: white; 
-  font-family: 'Syncopate', sans-serif; 
+  font-family: 'Fredoka One', cursive;
   margin-top: 1em;
   /* text-align: center; */ 
   transform: translateX(60px);
@@ -253,4 +258,11 @@ a{
     display: inline-flex;
     align-items: center;  
     justify-items: center;
+  }
+
+  .eventDetails{ 
+    border: 1px solid white; 
+    width: fit-content;  
+    background-color: #333; 
+    padding: 10px;
   }

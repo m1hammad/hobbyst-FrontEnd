@@ -1,7 +1,7 @@
 import Axios from 'axios';
 import React, {useEffect, useState} from 'react'  
 import {useParams} from "react-router-dom"  
-import {Col } from "react-bootstrap"
+import {Col, Row, Button } from "react-bootstrap"
 import Image from 'react-bootstrap/Image'
 
 export default function EventDetail(props) {  
@@ -22,31 +22,54 @@ export default function EventDetail(props) {
       }, 
       []
       ) 
-
+      
       if (event){ 
         console.log(event.title)
       }
-
-  return (
-      <> 
+      
+      return (
+        <> 
       {event&& 
-      <div className='eventDetailContainer'> 
-         <Col sm>
-            <Image fluid style={{objectFit:'cover', padding:0, width:'300px', borderRadius:'10px'}}  src={`${event.photo}`}/>
-          </Col> 
+       <div > 
                 <h1 className="title"> {event.title} </h1> 
                 <br></br>
-                <h3 style={{textAlign:'center'}}> {event.description} </h3> 
                 <br></br>
-            <div> 
-                <h3> Date and Time: {event.dateAndTime} </h3> 
-                 <h3> Maximum Participants: {event.maxParticipants} </h3> 
-                <h3> General Location: {event.generalLocation} </h3> 
-                <h3> Precise Location: {event.preciseLocation} </h3>
-            </div> 
-
-
+      <Row className='eventDetails'> 
+          <Col sm> 
+                  <h2> Description: </h2>  
+                  <h2> {event.description} </h2> 
+          </Col>
+         <Col sm>
+            <Image fluid style={{objectFit:'cover', padding:0, width:'350px', height:"275px", borderRadius:'10px', display:'flex'}}  src={`${event.photo}`}/>
+          </Col> 
+          <Col sm> 
+              <div> 
+                  <h3> Date and Time: {event.dateAndTime} </h3> 
+                  <h3> Maximum Participants: {event.maxParticipants} </h3> 
+                  <h3> General Location: {event.generalLocation} </h3> 
+                  <h3> Precise Location: {event.preciseLocation} </h3>
+              </div> 
+          </Col>
+          <Col sm>
+                <div style={{display:'flex' }}>
+                    <iframe 
+                      title={`${event.title}map`}
+                      src= {`https://maps.google.com/maps?q=${event.preciseLocation}=&output=embed`}
+                      width="350"
+                      height="275"
+                      frameBorder="0"
+                      scrolling="no"
+                      marginHeight="0"
+                      marginWidth="0"
+                      >
+                    </iframe>
+                </div>
+           </Col>
+      <br></br>
+      </Row> 
+     <Button variant="outline-light" className='joinBtn' href={`/eventcreateform`}>Join</Button>
       </div>
+       
       }
       </>
 

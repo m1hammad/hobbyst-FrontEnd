@@ -118,7 +118,6 @@ export default function Profile (props)  {
                                                                 >
                                                             </iframe>
                                                         </div>
-
                                                     </Col>
                                                     {/* <Button>Edit Event</Button> */}
                                                 </Row>
