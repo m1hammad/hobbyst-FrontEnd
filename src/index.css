@@ -61,6 +61,19 @@ background-color: #333;
   text-decoration: none;
 }
 
+/* <footer id='footer'>
+<div id='copyright'> */
+#footer{
+  position:absolute;
+  top:95vh;
+  height:5vh;
+  display:flex;
+  width:100vw;
+  justify-content: center;
+  background-color: rgb(30, 30, 30);
+  margin:0;
+  padding:1vh;
+}
 
 #loggedout{
   content: ' ';

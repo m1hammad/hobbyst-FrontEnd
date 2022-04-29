@@ -215,6 +215,11 @@ export default class App extends Component {
               </Nav>
             )}
           
+            <footer id='footer'>
+              <div id='copyright'>
+                2022 HOBBYST © ALL RIGHTS RESERVED
+              </div>
+            </footer>
 
           <Router>
           <div>
