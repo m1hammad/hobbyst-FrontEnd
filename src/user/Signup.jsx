@@ -98,7 +98,7 @@ export default function Signup(props) {
             </Form.Group>
            
 
-            <Button className="signInBtn" variant='primary' onClick={registerHandler}>Register</Button>
+            <Button className="signInBtn button-margin" variant='primary' onClick={registerHandler}>Register</Button>
 
         </Container>
       </div>

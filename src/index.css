@@ -56,16 +56,17 @@ background-color: #333;
 /* <footer id='footer'>
 <div id='copyright'> */
 #footer{
-  position:absolute;
-  top:95vh;
+  position:fixed;
+  bottom:0px; 
   height:5vh;
   display:flex;
   width:100vw;
   justify-content: center;
   background-color: rgb(30, 30, 30);
-  margin:0;
+  margin-top:1em;
   padding:1vh;
 }
+
 
 #loggedout{
   content: ' ';
@@ -305,8 +306,14 @@ a{
   .DetailsContainer{  
     position: relative;
     left: 31em;  
-  } 
+  }
+
+  .button-margin{
+    margin:6vh 
+  }
+
 
   .DetailName{ 
     color: #d6ebff;
   }
+
