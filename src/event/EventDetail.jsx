@@ -23,14 +23,6 @@ export default function EventDetail(props) {
       []
       ) 
 
-  // const addToUserHandler = () => {
-  //   Axios.post(`/event/${params.eventid}/${props.user.id}`)
-  //   .then(response => {
-  //     console.log('event handler response:', response)
-  //   })
-  //   .catch(error => console.log(error)) 
-
-  // }
   console.log(event) 
       
       return (
@@ -85,13 +77,7 @@ export default function EventDetail(props) {
           </Col>
         </Row>
       <br></br>
-     {/* <Button variant="outline-light" className='joinBtn' >Join</Button>  */}
-{/* 
-     <Form.Group> 
-                <Form.Label>Comments</Form.Label>
-                <Form.Control name="comments"> </Form.Control>
-     </Form.Group> */}
-     {/* <Button>Submit</Button> */}
+
       </div>         
 </div>
 
