@@ -2,9 +2,11 @@
 
 <hr>
 
-## Add your hobbies, and find events related to those hobbies! Make your own event and watch the new collections trickle in.
+## Add your hobbies, and find events related to those hobbies! Make your own event and watch the new connections trickle in.
 
 <hr>
+
+## [Deployable Link](https://hobbyst.herokuapp.com/)
 
 ## Below you will find screenshots with functionality, a little about the team, the technologies used.
 
