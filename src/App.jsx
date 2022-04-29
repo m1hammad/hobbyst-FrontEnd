@@ -252,6 +252,7 @@ export default class App extends Component {
 
             
             </Routes>
+
           </div> 
 
             <footer id='footer'>
@@ -260,6 +261,7 @@ export default class App extends Component {
               </div>
             </footer> 
             
+
         </Router>
       </div>
     )

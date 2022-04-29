@@ -117,8 +117,8 @@ export default function ProfileEdit(props){
             </Form.Group> 
            
 
-             <Button variant='primary' onClick={editHandler} className="signInBtn"> Save </Button> 
-             <Button variant='danger' className="deleteBtn" className="deleteBtn" href={`/profile/delete/${props.user.id}`}>Delete profile</Button>
+             <Button variant='primary' onClick={editHandler} className="signInBtn button-margin"> Save </Button> 
+             <Button variant='danger' className="deleteBtn button-margin" href={`/profile/delete/${props.user.id}`} >Delete profile</Button>
 
          </Container>
        </div>

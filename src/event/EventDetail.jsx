@@ -85,7 +85,7 @@ export default function EventDetail(props) {
           </Col>
         </Row>
       <br></br>
-     <Button variant="outline-light" className='joinBtn' >Join</Button> 
+     {/* <Button variant="outline-light" className='joinBtn' >Join</Button>  */}
 {/* 
      <Form.Group> 
                 <Form.Label>Comments</Form.Label>
