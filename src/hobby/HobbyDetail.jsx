@@ -1,6 +1,4 @@
 import React, {useEffect, useState} from 'react' 
-// import EventCreateForm from '../event/EventCreateForm'
-// import EventList from "../event/EventList"  
 import {Button} from "react-bootstrap"
 import {useParams} from "react-router-dom" 
 import Axios from "axios" 
@@ -46,13 +44,6 @@ export default function Hobby(props) {
           
           <div className="eventsInHobbyDetail"> 
                {hobby.events.map((event, index) => ( <a href={`/eventdetail/${event._id}`}> <div className="eventItems" key={index}> <EventItem event={event} key={index}/> </div> </a> ))}
-          </div>
-
-          <div> 
-            {/* <button className="createNewBtn"> <a href="/eventcreateform"> 
-            <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
-          <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
-          Create New</a> </button> */}
           </div>
 
         </div>

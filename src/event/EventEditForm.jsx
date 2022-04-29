@@ -115,12 +115,7 @@ export default function EventEditForm(props){
 
           <Form.Group>
                 <Form.Label>Hobbies:</Form.Label> <br/>
-                {/* <select class="select" multiple> */}
-                {/* <Form.Select options={aquaticCreatures} className="select" name="hobby[]" onChange={changeHandler} multiple="" data-live-search="true"> */}
                     {hobbyArr}
-                    {/* <Button type='button' name='hobby[]' onClick={changeHandler} value="hi" >Hi</Button> */}
-                    {/* </select> */}
-                {/* </Form.Select> */}
             </Form.Group>
 
                     <br></br>
