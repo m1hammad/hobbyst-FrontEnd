@@ -15,10 +15,10 @@ export default function EventDetail(props) {
         .then(response => {
           console.log(response.data, "unique")  
           // hobby = params.id
-          setEvent(response.data)
+          setEvent(response.data.event)
         }) 
         .catch(error => console.log(error)) 
-          console.log() 
+         
       }, 
       []
       ) 
@@ -31,7 +31,7 @@ export default function EventDetail(props) {
   //   .catch(error => console.log(error)) 
 
   // }
-      
+  console.log(event) 
       
       return (
         <> 
