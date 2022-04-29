@@ -292,4 +292,8 @@ a{
   .DetailsContainer{  
     position: relative;
     left: 31em;  
+  } 
+
+  .DetailName{ 
+    color: #d6ebff;
   }
