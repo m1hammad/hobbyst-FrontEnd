@@ -77,7 +77,6 @@ export default function EventCreateForm(props){
         )
         )
 
-        console.log(userId)
 
   return (
     <>
