@@ -26,11 +26,11 @@
 
 Our front pagee introduces what the webapp is about
 
-![frontpage](public\notloggedin.png)
+![frontpage](public/notloggedin.png)
 
 To start, click 'sign up'. After creating your profile, you will be logged in.
 
-![Your main page will look like this](public\signup.png)
+![Your main page will look like this](public/signup.png)
 
 Clicking your 'name' in the top nav bar, will take you to your profile, showing you all the events you've created. You can also edit your profile on this page, whether you want to change your name, the hobbies you're interested in, etc.
 ![My Events](public\myevents.png)
