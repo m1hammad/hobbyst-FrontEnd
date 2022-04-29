@@ -16,7 +16,7 @@
 
 ### Lila: the person writing this README is super cool. She loves hiking, trying new things, being outside and reading books to expand her EQ. Since Corona started, and since graduating university, she's found it very hard to make friends. That was why she found this project very interesting and personal.
 
-### Andrew:
+### Andrew: Over the course of the last two (insane) years, I found myself learning many new skills and adopting a few new hobbies. I would love to continue to develop those skills while developing new relationships with likeminded people...and this app lets us do that!
 
 
 ### Basheer: "Hello friend. I think that human connection is one of the most important things in life and the most valued moments in our lives are those we share with others. Im happy to be a part of this project which aims to help humans connect"
