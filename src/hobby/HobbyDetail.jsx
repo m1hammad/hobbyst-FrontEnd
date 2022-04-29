@@ -45,7 +45,7 @@ export default function Hobby(props) {
           </div>
           
           <div className="eventsInHobbyDetail"> 
-               {hobby.events.map((event, index) => ( <a href={`/eventdetail/${event._id}`}> <div className="eventItems" key={index}> <EventItem event={event} key={index}/> </div> </a> ))}
+               {hobby.events.map((event, index) => ( <a href={`/event/detail/${event._id}`}> <div className="eventItems" key={index}> <EventItem event={event} key={index}/> </div> </a> ))}
           </div>
 
           <div> 

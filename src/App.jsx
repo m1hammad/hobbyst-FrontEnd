@@ -188,7 +188,7 @@ export default class App extends Component {
                 <Nav.Link href="/" >Home</Nav.Link>
               </Nav.Item>
               <Nav.Item as="li">
-                <Nav.Link href='/profile' >{this.state.user ? this.state.user.user.name : null}</Nav.Link>
+                <Nav.Link href='/user' >{this.state.user ? this.state.user.user.name : null}</Nav.Link>
               </Nav.Item>
               <Nav.Item as="li">
               <Nav.Link href="/hobbylist"> All Hobbies</Nav.Link>
@@ -219,27 +219,27 @@ export default class App extends Component {
           <Router>
           <div>
             <Routes>
-              <Route path='/' element={ isAuth ? <HomeLoggedIn user={this.state.user.user} hobbies={this.state.hobbies} /> : <HomeLoggedOut />}></Route>
+              <Route path='/' element={ this.state.isAuth ? <HomeLoggedIn user={this.state.user.user} hobbies={this.state.hobbies} /> : <HomeLoggedOut />}></Route>
               <Route path='/signup' element={<Signup register={this.registerHandler} hobbies={this.state.hobbies} />}></Route>
               <Route path='/signin' element={<Signin login={this.loginHandler} />}></Route>
 
-              <Route path='/hobbylist' element={isAuth ? <HobbyList hobbies={this.state.hobbies} /> : <HomeLoggedOut />}> </Route> 
-              <Route path='/hobbylist/:userid' element={isAuth ? <HobbyList hobbys={this.state.userhobbies} /> : <HomeLoggedOut />}> </Route> 
+              <Route path='/hobbylist' element={this.state.isAuth ? <HobbyList hobbies={this.state.hobbies} /> : <HomeLoggedOut />}> </Route> 
+              <Route path='/hobbylist/:userid' element={this.state.isAuth ? <HobbyList hobbys={this.state.userhobbies} /> : <HomeLoggedOut />}> </Route> 
 
 
-              <Route path='/hobbydetail/:id' element={isAuth ? <HobbyDetail user={this.state.user.user} hobbies={this.state.hobbies} /> : <HomeLoggedOut />}> </Route> 
+              <Route path='/hobby/detail/:id' element={this.state.isAuth ? <HobbyDetail user={this.state.user.user} hobbies={this.state.hobbies} /> : <HomeLoggedOut />}> </Route> 
 
 
               {/* {this.state.hobbies.map(hobby => <Route path="/hobby/:_id" element={<HobbyDetail />} /> ) }  */}
              
 
-              <Route path='/profile' element={isAuth ? <Profile user={this.state.user.user||1 }/> : <HomeLoggedOut />} ></Route>
-              <Route path='/profile/edit/:id' element={isAuth ? <ProfileEdit user={this.state.user.user||1 } hobbies={this.state.hobbies}/> : <HomeLoggedOut />} ></Route>
-              <Route path='/profile/delete/:id' element={isAuth ? <ProfileDelete user={this.state.user.user||1 } logout={this.logoutHandler}/> : <HomeLoggedOut />} ></Route>
+              <Route path='/user' element={this.state.isAuth ? <Profile user={this.state.user.user||1 }/> : <HomeLoggedOut />} ></Route>
+              <Route path='/user/edit/:id' element={this.state.isAuth ? <ProfileEdit user={this.state.user.user||1 } hobbies={this.state.hobbies}/> : <HomeLoggedOut />} ></Route>
+              <Route path='/user/delete/:id' element={this.state.isAuth ? <ProfileDelete user={this.state.user.user||1 } logout={this.logoutHandler}/> : <HomeLoggedOut />} ></Route>
 
-              <Route path='/eventcreateform' element={isAuth ? <EventCreateForm hobbies={this.state.hobbies} user={this.state.user.user} eventy={this.createEventHandler} /> : <HomeLoggedOut />}></Route>
-              <Route path='/eventdetail/:eventid' element={isAuth ? <EventDetail hobbies={this.state.hobbies} user={this.state.user.user} event={this.state.event} /> : <HomeLoggedOut />}></Route>
-              <Route path='/event/edit/:_id' element={isAuth ? <EventEditForm hobbies={this.state.hobbies} user={this.state.user.user} event={this.state.event} /> : <HomeLoggedOut />}></Route>
+              <Route path='/eventcreateform' element={this.state.isAuth ? <EventCreateForm hobbies={this.state.hobbies} user={this.state.user.user} eventy={this.createEventHandler} /> : <HomeLoggedOut />}></Route>
+              <Route path='/event/detail/:eventid' element={this.state.isAuth ? <EventDetail hobbies={this.state.hobbies} user={this.state.user.user} event={this.state.event} /> : <HomeLoggedOut />}></Route>
+              <Route path='/eventedit/:_id' element={this.state.isAuth ? <EventEditForm hobbies={this.state.hobbies} user={this.state.user.user} event={this.state.event} /> : <HomeLoggedOut />}></Route>
               {/* import EventEditForm from './event/EventEditForm'
               import EventItem from './event/EventItem'
             import EventList from './event/EventList' */}
