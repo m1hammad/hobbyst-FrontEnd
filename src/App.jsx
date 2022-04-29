@@ -253,7 +253,7 @@ export default class App extends Component {
 
             
             </Routes>
-            <footer id='footer'>
+            <footer  class="page-footer" id='footer'>
               <div id='copyright'>
                 2022 HOBBYST © ALL RIGHTS RESERVED
               </div>

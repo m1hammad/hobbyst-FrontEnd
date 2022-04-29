@@ -56,8 +56,8 @@ background-color: #333;
 /* <footer id='footer'>
 <div id='copyright'> */
 #footer{
-  position:relative;
-  bottom:0px;
+  position:fixed;
+  bottom:0px; 
   height:5vh;
   display:flex;
   width:100vw;
@@ -65,8 +65,8 @@ background-color: #333;
   background-color: rgb(30, 30, 30);
   margin-top:1em;
   padding:1vh;
-  
 }
+
 
 #loggedout{
   content: ' ';
@@ -307,3 +307,8 @@ a{
     position: relative;
     left: 31em;  
   }
+
+  .button-margin{
+    margin:6vh 
+  }
+
