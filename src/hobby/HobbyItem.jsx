@@ -17,7 +17,7 @@ export default function HobbyItem(props) {
 
       </Link> 
 
-      </a> 
+
       </div> 
       <div> 
         <h4 className="hobbyIndexName">{props.hobby.name}</h4>
