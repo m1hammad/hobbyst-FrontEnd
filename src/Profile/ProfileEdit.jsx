@@ -46,7 +46,7 @@ export default function ProfileEdit(props){
         }
     }
 
-    console.log("hobby lsit", hobbyState)
+    console.log("hobby list", hobbyState)
 
     console.log(props.user.id)
 
@@ -61,9 +61,7 @@ export default function ProfileEdit(props){
     console.log('this is userrrr', user)
    
     const editHandler = async() => {
-        // props.register(user)
-        // console.log("hobby state", {hobbyState})
-        // console.log("user", user)
+        console.log("profile", profileState)
         console.log(`/profile/edit/${props.user.id}`)
         await Axios.put(`/profile/edit/${props.user.id}`,user)
         navigate('/profile')
@@ -72,7 +70,7 @@ export default function ProfileEdit(props){
         <Button name='hobby' type='button' className='hobbyBtns' key={index} onClick={selectHobby} value={hobby._id} multiple >{hobby.name}</Button> 
         )
         )
-
+        console.log("profile state",profileState)
     return(
 
         <div>
@@ -82,7 +80,7 @@ export default function ProfileEdit(props){
         <Container>
             <Form.Group>
                 <Form.Label>First Name</Form.Label>
-                <Form.Control name="firstName" onChange={changeHandler} ></Form.Control>
+                <Form.Control name="firstName"  onChange={changeHandler} ></Form.Control>
             </Form.Group>
 
             <Form.Group>
