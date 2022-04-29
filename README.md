@@ -18,9 +18,11 @@
 
 ### Andrew:
 
-### Basheer:
 
-### Hammad:
+### Basheer: "Hello friend. I think that human connection is one of the most important things in life and the most valued moments in our lives are those we share with others. Im happy to be a part of this project which aims to help humans connect"
+
+
+### Hammad: I like reading and listening to audio books
 
 Our front pagee introduces what the webapp is about
 
@@ -54,3 +56,4 @@ If you want to create an event, click the 'New Event' in the Nav bar. On this pa
 - RSVP to other people's events
 - Search functionality
 - Event Image upload
+

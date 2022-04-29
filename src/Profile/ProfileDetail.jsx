@@ -50,8 +50,7 @@ export default function Profile (props)  {
                                 justifyContent:'space-around',
                                 margin:'40px 0px'}} >                            
                                 <div>
-                                    <Image  style={{width: '18vw', minWidth:'90px',height:'18vw',minHeight:'90px',objectFit:'cover', padding:0 }}  src={profileState.image} roundedCircle thumbnail />                            
-                                    {/* <Image  style={{width: 150,height:150,objectFit:'cover', padding:0 }}  src='https://media.harrypotterfanzone.com/harry-potter-chamber-of-secrets-portrait-3-1050x0-c-default.jpg' roundedCircle thumbnail /> */}
+                                    <Image thumbnail style={{width: '18vw', minWidth:'90px',height:'18vw',minHeight:'90px',objectFit:'cover', padding:0 }}  src={profileState.image} roundedCircle  />                          
                                 </div>
                                 <div style={{textAlign: 'center', display:'flex', justifyContent:'center', flexDirection:'column' }}>
                                     <h4>{profileState.firstName} {profileState.lastName}</h4>
@@ -96,12 +95,13 @@ export default function Profile (props)  {
                                     profileState.events.map(function(event,index){
                                         return (
 
+
                                             <Container fluid style={{textAlign:'center', color:"#333", paddingBottom:"1em", margin:'2vh auto',padding:'0', backgroundColor:'white',borderRadius:'10px',
-                                                boxShadow: '4px 4px 10px gray'}} key={index}>
+                                                boxShadow: '4px 4px 10px black'}} key={index}>
                                                 <h3>{event.title}</h3>
                                                 <Row style={{height:'100%', width:"max-content",maxWidth:'90vw', margin:'0 auto',padding:'0em', justifyContent:'space-between'}}>
                                                     <Col sm>
-                                                        <Image fluid style={{objectFit:'cover', padding:0, width:'300px', borderRadius:'10px'}}  src={`${event.photo}`}/>
+                                                        <Image fluid style={{objectFit:'cover', padding:0, width:'300px', borderRadius:'10px',border:'0px solid white'}}  src={`${event.photo}`}/>
                                                         <p>{event.description}</p>
                                                     </Col>
                                                     <Col sm>
