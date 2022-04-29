@@ -55,7 +55,7 @@ export default function Profile (props)  {
                                 <div style={{textAlign: 'center', display:'flex', justifyContent:'center', flexDirection:'column' }}>
                                     <h4>{profileState.firstName} {profileState.lastName}</h4>
                                     <h5>{profileState.city} {profileState.province}</h5>
-                                    <Button variant="outline-light" className='hobby-btn' href={`profile/edit/${props.user.id}`}>Edit Profile </Button>
+                                    <Button variant="outline-light" className='hobby-btn' href={`user/edit/${props.user.id}`}>Edit Profile </Button>
                                 </div>
                             </div>
 
@@ -75,7 +75,7 @@ export default function Profile (props)  {
                                                 {
                                                         profileState.hobby.map(function(hobby,index){
                                                             
-                                                        return <Button key={index} variant="outline-light" href={`hobbydetail/${hobby._id}`} className='hobby-btn'> {hobby.name} </Button> 
+                                                        return <Button key={index} variant="outline-light" href={`hobby/detail/${hobby._id}`} className='hobby-btn'> {hobby.name} </Button> 
                                                         // <Button type="submit">Button</Button>{' '}
                                                         
                                                         // <li key={index} className='btn hobby-btn' style={{}}><a  href={`hobbydetail/${hobby._id}`}>{hobby.name}</a></li>

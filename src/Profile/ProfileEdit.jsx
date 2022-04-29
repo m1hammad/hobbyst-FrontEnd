@@ -64,7 +64,7 @@ export default function ProfileEdit(props){
         console.log("profile", profileState)
         console.log(`/profile/edit/${props.user.id}`)
         await Axios.put(`/profile/edit/${props.user.id}`,user)
-        navigate('/profile')
+        navigate('/user')
     }
     const hobbyArr = props.hobbies.map((hobby, index) => (
         <Button name='hobby' type='button' className='hobby-btn' key={index} onClick={selectHobby} value={hobby._id} multiple >{hobby.name}</Button> 
@@ -118,7 +118,7 @@ export default function ProfileEdit(props){
            
 
              <Button variant='primary' onClick={editHandler} className="signInBtn button-margin"> Save </Button> 
-             <Button variant='danger' className="deleteBtn button-margin" href={`/profile/delete/${props.user.id}`} >Delete profile</Button>
+             <Button variant='danger' className="deleteBtn button-margin" href={`/user/delete/${props.user.id}`} >Delete profile</Button>
 
          </Container>
        </div>
