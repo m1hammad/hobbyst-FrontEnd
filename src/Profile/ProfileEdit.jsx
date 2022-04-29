@@ -67,16 +67,14 @@ export default function ProfileEdit(props){
         navigate('/profile')
     }
     const hobbyArr = props.hobbies.map((hobby, index) => (
-        <Button name='hobby' type='button' className='hobbyBtns' key={index} onClick={selectHobby} value={hobby._id} multiple >{hobby.name}</Button> 
+        <Button name='hobby' type='button' className='hobby-btn' key={index} onClick={selectHobby} value={hobby._id} multiple >{hobby.name}</Button> 
         )
         )
         console.log("profile state",profileState)
     return(
 
         <div>
-        <h1>Edit your profile</h1>
-        <Button variant='danger' href={`/profile/delete/${props.user.id}`}>Delete profile</Button>
-
+        <h1 className="title">Edit your profile</h1>
         <Container>
             <Form.Group>
                 <Form.Label>First Name</Form.Label>
@@ -119,7 +117,8 @@ export default function ProfileEdit(props){
             </Form.Group> 
            
 
-             <Button variant='primary' onClick={editHandler} >Save Changes</Button>
+             <Button variant='primary' onClick={editHandler} className="signInBtn"> Save </Button> 
+             <Button variant='danger' className="deleteBtn" className="deleteBtn" href={`/profile/delete/${props.user.id}`}>Delete profile</Button>
 
          </Container>
        </div>

@@ -9,7 +9,7 @@ export default function HobbyList(props) {
 
   return (   
     <>
-    <h1 className='title'>HOBBIES</h1>
+    <h1 className='title'>ALL HOBBIES</h1>
 {props.hobbies.map((hobby, index) => ( <div className="hobbyList"> <HobbyItem hobby={hobby} key={index} /> </div>))}
     </> 
       )

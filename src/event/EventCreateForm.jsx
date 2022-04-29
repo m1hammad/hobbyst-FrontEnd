@@ -73,7 +73,7 @@ export default function EventCreateForm(props){
     // pases the hobby id to the selecthobby function, and it adds it to the hobi list
     // and the setHobby statelist
     const hobbyArr = props.hobbies.map((hobby, index) => (
-        <Button name='hobby' type='button' className='hobbyBtns' key={index} onClick={selectHobby} value={hobby._id} multiple >{hobby.name}</Button> 
+        <Button name='hobby' type='button' className='hobby-btn' key={index} onClick={selectHobby} value={hobby._id} multiple >{hobby.name}</Button> 
         )
         )
 
