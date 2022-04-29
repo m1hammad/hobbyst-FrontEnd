@@ -29,11 +29,11 @@ code {
   font-family: 'Fredoka One', cursive;
   text-align: center;
   color: rgb(255, 255, 255);
-  font-size: 200px;
-  text-shadow: -1px 1px 0 #000,
-        4px 4px 0 #000,
-        1px -1px 0 #000,
-        -1px -1px 0 #000;
+  font-size: 200px; 
+} 
+
+.byline{ 
+  text-align: center;
 }
 
 
@@ -76,6 +76,11 @@ background-color: #333;
   background-size: cover;
   z-index: -1;
 } 
+
+.isLoggedInHobbies{  
+  border: 1 px solid white;
+}
+
 
 .hobbyIndexImg{ 
   width: 250px; 
@@ -219,7 +224,9 @@ a{
 } 
 
 .joinBtn{ 
-  justify-content: center;
+  justify-content: center; 
+  position: absolute; 
+  left: 50px;
 }
 
 .hobbyBtns{ 
@@ -261,8 +268,18 @@ a{
   }
 
   .eventDetails{ 
-    border: 1px solid white; 
-    width: fit-content;  
+    /* border: 1px solid white;  */
+    /* width: fit-content;   */
+    max-width: 700px; 
     background-color: #333; 
     padding: 10px;
+  } 
+
+  .eventDetailsCube{ 
+    width: 350px; 
+  } 
+
+  .DetailsContainer{  
+    position: relative;
+    left: 31em;  
   }

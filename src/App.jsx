@@ -191,7 +191,7 @@ export default class App extends Component {
                 <Nav.Link href='/profile' >{this.state.user ? this.state.user.user.name : null}</Nav.Link>
               </Nav.Item>
               <Nav.Item as="li">
-              <Nav.Link href="/hobbylist" >Hobbies</Nav.Link>
+              <Nav.Link href="/hobbylist"> All Hobbies</Nav.Link>
             </Nav.Item>
             <Nav.Item>
             <Nav.Link href="/eventcreateform" >New Event</Nav.Link>
