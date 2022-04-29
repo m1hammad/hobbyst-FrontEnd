@@ -309,4 +309,16 @@ a{
 
   .DetailName{ 
     color: #d6ebff;
+  } 
+
+  .hobbyIndexName{ 
+    text-align: center; 
+    position: relative; 
+    left: 120px; 
+    margin-top: 10px;
+  } 
+
+  #footer{ 
+    position: fixed;
+    margin-top: 2em;
   }

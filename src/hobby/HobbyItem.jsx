@@ -7,13 +7,17 @@ export default function HobbyItem(props) {
   let link = `hobbydetail/${props.hobby._id}`
 
     return ( 
-      
+    <div> 
       <div className='HobbyItem'> 
       <a href={link}>
         {/* <h3 className='name'> {props.hobby.name} </h3> */}
-       <img className='hobbyIndexImg' src={props.hobby.photo}/> 
+       <img className='hobbyIndexImg' src={props.hobby.photo}/>  
       {/* <HobbyDetail hobby={props.hobby} key={props.hobby.id}> </HobbyDetail> */}
       </a> 
+      </div> 
+      <div> 
+        <h4 className="hobbyIndexName">{props.hobby.name}</h4>
       </div>
+    </div>
     );
   }
