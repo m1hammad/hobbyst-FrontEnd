@@ -255,11 +255,11 @@ export default class App extends Component {
 
           </div> 
 
-            <footer id='footer'>
+            {/* <footer id='footer'>
               <div id='copyright'>
                 2022 HOBBYST © ALL RIGHTS RESERVED
               </div>
-            </footer> 
+            </footer>  */}
             
 
         </Router>
