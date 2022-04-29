@@ -50,7 +50,7 @@ export default function EventDetail(props) {
    
       <Row className='eventDetails'> 
           <Col sm className="eventDetailsCube"> 
-                  <h2> Description: </h2>  
+                  <h2> <span className="DetailName"> Description:</span> </h2>  
                   <h2> {event.description} </h2> 
           </Col>
          <Col sm className="eventDetailsCube">
@@ -77,15 +77,15 @@ export default function EventDetail(props) {
 
           <Col sm className="eventDetailsCube"> 
               <div> 
-                  <h3> Date and Time: {event.dateAndTime} </h3> 
-                  <h3> Maximum Participants: {event.maxParticipants} </h3> 
-                  <h3> General Location: {event.generalLocation} </h3> 
-                  <h3> Precise Location: {event.preciseLocation} </h3>
+                  <h3 className="DetailName"> Date and Time:</h3>  <span>{event.dateAndTime} </span>  
+                  <h3 className="DetailName"> Maximum Participants:</h3>  <span> {event.maxParticipants} </span>
+                  <h3 className="DetailName"> General Location: </h3> <span>{event.generalLocation} </span>
+                  <h3 className="DetailName"> Precise Location: </h3> <span> {event.preciseLocation}</span> 
               </div> 
           </Col>
         </Row>
       <br></br>
-     <Button variant="outline-light" className='joinBtn' >Join</Button> 
+     {/* <Button variant="outline-light" className='joinBtn' >Join</Button>  */}
 {/* 
      <Form.Group> 
                 <Form.Label>Comments</Form.Label>
