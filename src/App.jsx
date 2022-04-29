@@ -197,7 +197,7 @@ export default class App extends Component {
             <Nav.Link href="/eventcreateform" >New Event</Nav.Link>
             </Nav.Item>
               <Nav.Item as="li" className="logout">
-                <Nav.Link href="/logout" onClick={this.logoutHandler} >Logout</Nav.Link>
+                <Nav.Link href="/" onClick={this.logoutHandler} >Logout</Nav.Link>
               </Nav.Item>
               </Nav>
             ):
