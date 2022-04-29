@@ -216,7 +216,6 @@ export default class App extends Component {
             )}
           
 
-
           <Router>
           <div>
             <Routes>
@@ -243,7 +242,7 @@ export default class App extends Component {
               <Route path='/event/edit/:_id' element={isAuth ? <EventEditForm hobbies={this.state.hobbies} user={this.state.user.user} event={this.state.event} /> : <HomeLoggedOut />}></Route>
               {/* import EventEditForm from './event/EventEditForm'
               import EventItem from './event/EventItem'
-              import EventList from './event/EventList' */}
+            import EventList from './event/EventList' */}
 
 
               {/* <Route path='/eventcreateform' element={<HobbyList hobbies={this.state.hobbies} />}> </Route>   */}
@@ -253,12 +252,16 @@ export default class App extends Component {
 
             
             </Routes>
-            <footer  class="page-footer" id='footer'>
+
+          </div> 
+
+            <footer id='footer'>
               <div id='copyright'>
                 2022 HOBBYST © ALL RIGHTS RESERVED
               </div>
-            </footer>
-          </div>
+            </footer> 
+            
+
         </Router>
       </div>
     )
