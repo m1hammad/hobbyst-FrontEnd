@@ -24,7 +24,7 @@
 
 ### Hammad: I like reading and listening to audio books
 
-Our front pagee introduces what the webapp is about
+Our front page introduces what the webapp is about
 
 ![frontpage](public/notloggedin.png)
 
@@ -33,22 +33,22 @@ To start, click 'sign up'. After creating your profile, you will be logged in.
 ![Your main page will look like this](public/signup.png)
 
 Clicking your 'name' in the top nav bar, will take you to your profile, showing you all the events you've created. You can also edit your profile on this page, whether you want to change your name, the hobbies you're interested in, etc.
-![My Events](public\myevents.png)
+![My Events](public/myevents.png)
 
 Clicking on 'All Hobbies' shows you a list of all the hobbies.
 
-![Hobbies List](public\allhobbies.png)
+![Hobbies List](public/allhobbies.png)
 
 If you click on the image or text of a hobby, you're directed to all the events that exist for that hobby.
 
-![photo](public\hobbydetail.png)
+![photo](public/hobbydetail.png)
 
 If you click one of the event titles, it'll give you the information about the event, including location, time, etc.
 
-![event detail](public\eventdetails.png)
+![event detail](public/eventdetails.png)
 
 If you want to create an event, click the 'New Event' in the Nav bar. On this page, please enter the photo as a URL (you can upload your picture to Imgur and then copy/paste the link and put it in the field).
-![picture](public\createevent.png)
+![picture](public/createevent.png)
 
 ### Icebox Items:
 
